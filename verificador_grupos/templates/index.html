@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Grupos</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        textarea { width: 100%; height: 100px; }
+        .group-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .group-box { border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
+        button { font-size: 1.2em; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Grupos de Cursistas</h1>
+    <form action="/verificar" method="POST" enctype="multipart/form-data">
+        
+        <label for="spreadsheet">1. Envie a Planilha Mestre (com todos os alunos e seus grupos corretos):</label>
+        <input type="file" id="spreadsheet" name="spreadsheet" accept=".xlsx, .xls, .csv" required>
+        
+        <hr>
+        <p>2. Copie e cole a lista de e-mails de cada grupo nos campos abaixo:</p>
+        
+        <div class="group-inputs">
+            <div class="group-box">
+                <label for="group1">Grupo 1</label>
+                <textarea id="group1" name="group1" placeholder="Cole os e-mails do Grupo 1 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group2">Grupo 2</label>
+                <textarea id="group2" name="group2" placeholder="Cole os e-mails do Grupo 2 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group3">Grupo 3</label>
+                <textarea id="group3" name="group3" placeholder="Cole os e-mails do Grupo 3 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group4">Grupo 4</label>
+                <textarea id="group4" name="group4" placeholder="Cole os e-mails do Grupo 4 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group5">Grupo 5</label>
+                <textarea id="group5" name="group5" placeholder="Cole os e-mails do Grupo 5 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group6">Grupo 6</label>
+                <textarea id="group6" name="group6" placeholder="Cole os e-mails do Grupo 6 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group7">Grupo 7</label>
+                <textarea id="group7" name="group7" placeholder="Cole os e-mails do Grupo 7 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group8">Grupo 8</label>
+                <textarea id="group8" name="group8" placeholder="Cole os e-mails do Grupo 8 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group9">Grupo 9</label>
+                <textarea id="group9" name="group9" placeholder="Cole os e-mails do Grupo 9 aqui..."></textarea>
+            </div>
+            <div class="group-box">
+                <label for="group10">Grupo 10</label>
+                <textarea id="group10" name="group10" placeholder="Cole os e-mails do Grupo 10 aqui..."></textarea>
+            </div>
+        </div>
+
+        <button type="submit">Verificar Divergências</button>
+    </form>
+</body>
+</html>
