@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  webapp:
+    build: .
+    container_name: proditec-webapp
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: streamlit run webapp/home.py --server.address=0.0.0.0
+  # Bot service (optional, uncomment to use)
+  # bot:
+  #   build: .
+  #   container_name: proditec-bot
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - DISPLAY=:99
+  #   command: sh -c "Xvfb :99 -screen 0 1280x1024x24 & python main.py"
