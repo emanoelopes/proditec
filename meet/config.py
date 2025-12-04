@@ -18,7 +18,8 @@ SCOPES = [
     'https://www.googleapis.com/auth/meetings.space.created',  # Para criar/listar espaços Meet
     'https://www.googleapis.com/auth/meetings.space.readonly',   # Para ler informações de espaços
     'https://www.googleapis.com/auth/spreadsheets.readonly',    # Para ler planilhas
-    'https://www.googleapis.com/auth/calendar.readonly'         # Para ler eventos do calendário
+    'https://www.googleapis.com/auth/calendar.readonly',        # Para ler eventos do calendário
+    'https://www.googleapis.com/auth/drive.readonly'            # Para ler arquivos do Drive
 ]
 
 # Configurações do Dashboard

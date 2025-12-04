@@ -17,4 +17,5 @@ requires-python = ">=3.9"
     "google-auth>=2.0.0",
     "google-auth-oauthlib>=1.0.0",
     "google-apps-meet>=0.0.1",
+    "google-api-python-client>=2.0.0",
 ]

@@ -77,6 +77,54 @@ class GoogleIntegration:
         self.meet_conference_records_client = meet_v2.ConferenceRecordsServiceClient(credentials=self.creds)
         self.sheets_service = build('sheets', 'v4', credentials=self.creds)
         self.calendar_service = build('calendar', 'v3', credentials=self.creds)
+        self.drive_service = build('drive', 'v3', credentials=self.creds)
+    
+    def listar_arquivos_drive(self, query: str = None, page_size: int = 10) -> List[Dict]:
+        """
+        Lista arquivos do Google Drive.
+        
+        Args:
+            query: Query de filtro (ex: "mimeType = 'application/vnd.google-apps.spreadsheet'")
+            page_size: Número máximo de arquivos para listar
+            
+        Returns:
+            Lista de arquivos com id e name
+        """
+        try:
+            results = self.drive_service.files().list(
+                q=query,
+                pageSize=page_size,
+                fields="nextPageToken, files(id, name, mimeType)"
+            ).execute()
+            return results.get('files', [])
+        except Exception as e:
+            raise Exception(f"Erro ao listar arquivos do Drive: {str(e)}")
+
+    def download_arquivo_drive(self, file_id: str, output_path: str) -> bool:
+        """
+        Faz download de um arquivo do Google Drive.
+        
+        Args:
+            file_id: ID do arquivo
+            output_path: Caminho local para salvar o arquivo
+            
+        Returns:
+            True se sucesso
+        """
+        try:
+            from googleapiclient.http import MediaIoBaseDownload
+            import io
+            
+            request = self.drive_service.files().get_media(fileId=file_id)
+            fh = io.FileIO(output_path, 'wb')
+            downloader = MediaIoBaseDownload(fh, request)
+            done = False
+            while done is False:
+                status, done = downloader.next_chunk()
+            return True
+        except Exception as e:
+            raise Exception(f"Erro ao baixar arquivo do Drive: {str(e)}")
+
     
     def ler_planilha_por_id(self, spreadsheet_id: str, worksheet_name: str = None) -> pd.DataFrame:
         """
