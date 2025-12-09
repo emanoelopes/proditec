@@ -29,7 +29,7 @@ class AvamecScraper:
 
     def setup_driver(self):
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless") # Commented out for debugging/visual confirmation
+        options.add_argument("--headless") # Commented out for debugging/visual confirmation
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--window-size=1920,1080")
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     try:
         if scraper.login():
             # Scrape Turma A (179)
-            scraper.scrape_grades("179", "Turma A")
+            # scraper.scrape_grades("179", "Turma A")
             # Scrape Turma B (180)
             scraper.scrape_grades("180", "Turma B")
     finally:
