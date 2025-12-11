@@ -1,2 +1,4 @@
 .env
 real_data.json
+real_data.json.bak
+bot_whatsapp/delivered_report_*.csv
