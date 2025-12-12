@@ -1,6 +1,7 @@
 import time
 import random
 import logging
+import urllib.parse
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -63,7 +64,8 @@ class WhatsAppBot:
             time.sleep(random.uniform(2, 5))
             
             # Format URL to open chat with specific number
-            url = f"https://web.whatsapp.com/send?phone={phone}&text={message}"
+            encoded_message = urllib.parse.quote(message)
+            url = f"https://web.whatsapp.com/send?phone={phone}&text={encoded_message}"
             self.driver.get(url)
             
             # Wait for the chat to load and the send button to be clickable
