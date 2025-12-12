@@ -61,7 +61,8 @@ class WhatsAppBot:
 
         try:
             # Random delay before starting new action to mimic human behavior
-            time.sleep(random.uniform(2, 5))
+            # Increased delay to avoid ban (8-15 seconds)
+            time.sleep(random.uniform(8, 15))
             
             # Format URL to open chat with specific number
             encoded_message = urllib.parse.quote(message)
@@ -91,7 +92,7 @@ class WhatsAppBot:
             input_box = self.driver.find_element(By.XPATH, input_box_xpath)
             
             # Random delay before sending
-            time.sleep(random.uniform(1, 3))
+            time.sleep(random.uniform(3, 6))
             
             # Press Enter to send
             input_box.send_keys(Keys.ENTER)
@@ -99,7 +100,7 @@ class WhatsAppBot:
             logging.info(f"Message sent to {phone}")
             
             # Wait a bit after sending to ensure it goes through before navigating away
-            time.sleep(random.uniform(2, 4))
+            time.sleep(random.uniform(5, 8))
             return True
 
         except Exception as e:

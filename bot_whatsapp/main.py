@@ -1,6 +1,7 @@
 import pandas as pd
 import click
 import logging
+import time
 import sys
 import os
 from datetime import datetime
@@ -11,10 +12,13 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
 @click.command()
 @click.option('--csv', required=True, type=click.Path(exists=True), help='Path to the CSV file containing contacts.')
-@click.option('--message', required=True, help='Message to send. Use {name} for personalization if the CSV has a "name" column.')
+@click.option('--message', required=False, help='Message to send. Use {name} for personalization if the CSV has a "name" column.')
+@click.option('--message-file', required=False, type=click.Path(exists=True), help='Path to a text file containing the message.')
+@click.option('--batch-size', default=50, help='Number of messages to send before pausing (to avoid bans).')
+@click.option('--batch-pause', default=60, help='Pause time in seconds between batches.')
 @click.option('--phone-col', default='phone', help='Column name for phone numbers in the CSV.')
 @click.option('--name-col', default='name', help='Column name for names (optional) for personalization.')
-def main(csv, message, phone_col, name_col):
+def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_col):
     """
     WhatsApp Mass Messenger Bot.
     
@@ -26,6 +30,19 @@ def main(csv, message, phone_col, name_col):
     if not os.path.exists(csv):
         click.echo(f"Error: CSV file '{csv}' not found.")
         sys.exit(1)
+
+    # Validate message source
+    if not message and not message_file:
+        click.echo("Error: You must provide either --message or --message-file.")
+        sys.exit(1)
+
+    if message_file:
+        try:
+            with open(message_file, 'r', encoding='utf-8') as f:
+                message = f.read()
+        except Exception as e:
+            click.echo(f"Error reading message file: {e}")
+            sys.exit(1)
 
     try:
         df = pd.read_csv(csv)
@@ -47,8 +64,18 @@ def main(csv, message, phone_col, name_col):
         
         delivered_contacts = []
         indices_to_drop = []
+        
+        count_processed = 0
 
         for index, row in df.iterrows():
+            # Batch Pause Logic
+            if count_processed > 0 and count_processed % batch_size == 0:
+                click.echo(f"Batch limit of {batch_size} reached. Pausing for {batch_pause} seconds...")
+                time.sleep(batch_pause)
+                click.echo("Resuming...")
+
+            count_processed += 1
+
             phone = str(row[phone_col])
             
             # Simple cleaning of phone numbers (remove spaces, etc if needed)
