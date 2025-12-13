@@ -4,3 +4,4 @@ real_data.json.bak
 bot_whatsapp/delivered_report_*.csv
 bot_whatsapp/nao_confirmados.csv
 bot_whatsapp/msg.txt
+bot_whatsapp/contacts_example.csv

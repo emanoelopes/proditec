@@ -57,6 +57,49 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
 
     bot = WhatsAppBot()
     
+    # --- RESUME LOGIC ---
+    # Find all delivered_report_*.csv files
+    sent_phones = set()
+    import glob
+    report_files = glob.glob("delivered_report_*.csv")
+    if report_files:
+        click.echo(f"Found {len(report_files)} previous report(s). Checking for already sent messages...")
+        for rf in report_files:
+            try:
+                # Read only the phone column to save memory if files are huge
+                # Assuming 'phone' column exists as per line 99/114 logic
+                sent_df = pd.read_csv(rf, dtype=str) 
+                if 'phone' in sent_df.columns:
+                    sent_phones.update(sent_df['phone'].tolist())
+            except Exception as e:
+                click.echo(f"Warning: Could not read report {rf}: {e}")
+        
+        click.echo(f"Total unique contacts previously messaged: {len(sent_phones)}")
+    
+    # Filter the main dataframe
+    if not sent_phones:
+        df_to_process = df
+    else:
+        # Ensure phone column is string for comparison
+        df[phone_col] = df[phone_col].astype(str)
+        
+        # Filter
+        initial_count = len(df)
+        df_to_process = df[~df[phone_col].isin(sent_phones)]
+        skipped_count = initial_count - len(df_to_process)
+        
+        if skipped_count > 0:
+            click.echo(f"Skipping {skipped_count} contacts that were already found in previous reports.")
+        else:
+            click.echo("No contacts skipped (none matched previous reports).")
+            
+    if len(df_to_process) == 0:
+        click.echo("All contacts in the CSV have already been messaged. Exiting.")
+        return # Exit gracefully
+        
+    df = df_to_process # Work with the filtered list
+    # --- END RESUME LOGIC ---
+
     try:
         bot.start()
         

@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Configure logging
@@ -77,12 +78,66 @@ class WhatsAppBot:
             input_box_xpath = '//*[@id="main"]//footer//*[@role="textbox"]'
             
             # Sometimes an alert appears if the number is invalid
+            # Wait for the input box where the pre-filled message is
+            input_box_xpath = '//*[@id="main"]//footer//*[@role="textbox"]'
+            
+            # Sometimes an alert appears if the number is invalid
             try:
                 WebDriverWait(self.driver, 15).until(
                     EC.presence_of_element_located((By.XPATH, input_box_xpath))
                 )
-            except Exception:
-                logging.warning(f"Could not open chat for {phone}. Number might be invalid.")
+            except TimeoutException:
+                # Timeout occurred. Determine why.
+                logging.warning(f"Timeout waiting for chat with {phone}. Checking for errors...")
+                
+                # Check 1: Invalid Number Modal
+                # The text usually contains "Phone number shared via url is invalid." or "The phone number... is not on WhatsApp"
+                # The modal usually comes from a div with role="dialog" or text matching invalid number
+                try:
+                    invalid_xpath = '//*[contains(text(), "VALID")]' # Generic check for "invalid" text might be risky, but specific text depends on locale
+                    # Better to check for the specific popup structure if possible, but text is often reliably present in the UI
+                    # Portuguese: "O número de telefone... não é válido"
+                    # English: "Phone number shared via url is invalid"
+                    
+                    # We will check if the main chat window is NOT present but we are still on the page
+                    if len(self.driver.find_elements(By.XPATH, '//*[@data-testid="popup-controls-ok"]')) > 0:
+                         # This is the "OK" button on the invalid number popup
+                         click_ok = self.driver.find_element(By.XPATH, '//*[@data-testid="popup-controls-ok"]')
+                         click_ok.click()
+                         logging.warning(f"Invalid number detected for {phone}.")
+                         return False
+                except Exception:
+                    pass
+
+                # Check 2: Disconnected / Logged Out (QR Code page)
+                # If the side pane is gone, we are likely logged out.
+                if len(self.driver.find_elements(By.XPATH, '//*[@id="side"]')) == 0:
+                    logging.warning("WhatsApp Web session disconnected! Waiting for QR Code scan...")
+                    
+                    # Wait for user to scan QR code again
+                    while True:
+                        try:
+                            # Check if back online
+                            if len(self.driver.find_elements(By.XPATH, '//*[@id="side"]')) > 0:
+                                logging.info("Re-connection successful! Resuming...")
+                                # Retry sending the message to this user
+                                # We need to reload the url because we might be on a landing page
+                                self.driver.get(url)
+                                break
+                            time.sleep(2)
+                        except Exception as e:
+                            logging.error(f"Error while waiting for login: {e}")
+                            time.sleep(2)
+                            
+                    # After breaking the loop, we recurse to try sending again
+                    # Be careful with recursion depth, but typically this happens once or twice
+                    # Recurse:
+                    return self.send_message(phone, message)
+                
+                logging.warning(f"Could not open chat for {phone}. Reason unknown (not invalid, not disconnected). Skipping.")
+                return False
+            except Exception as e:
+                logging.warning(f"Could not open chat for {phone}. Error: {e}")
                 return False
 
             video_recording_delay = 1
