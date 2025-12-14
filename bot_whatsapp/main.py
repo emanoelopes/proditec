@@ -152,9 +152,61 @@ def main(csv, message, message_file, messages_json, batch_size, batch_pause, pho
 
             phone = str(row[phone_col])
             
-            # Robust phone cleaning
-            # Remove everything that is not a digit
+            # Robust phone cleaning and formatting
+            # 1. Remove everything that is not a digit
             phone = re.sub(r'\D', '', phone)
+            
+            # 2. Brasil Phone Number Correction Logic
+            # Case A: 8 digits (No DDD, no country code) -> Too risky to guess DDD, assume invalid or log warning.
+            # Case B: 10 digits (DDD + 8 digits) -> Add country code + Add 9
+            # Case C: 11 digits (DDD + 9 digits) -> Add country code
+            # Case D: 12 digits (55 + DDD + 8 digits) -> Add 9
+            # Case E: 13 digits (55 + DDD + 9 digits) -> OK
+            
+            # Logic implementation:
+            if len(phone) == 10:
+                # Assuming DDD + 8 digits. Add '55' and the '9' after DDD.
+                # Format: PP NNNN NNNN -> 55 PP 9 NNNN NNNN
+                ddd = phone[:2]
+                number = phone[2:]
+                phone = f"55{ddd}9{number}"
+                logging.info(f"Auto-corrected phone (added 55 and 9): {phone}")
+                
+            elif len(phone) == 11:
+                # Assuming DDD + 9 digits OR 55 + DDD + 8 digits? 
+                # Usually if it starts with 55 and has 11 digits, it is 55 + DDD + 8 digits (old format without 9)
+                # But it could be just DDD + 9 digits (new format without country code)
+                
+                # Check if starts with 55 (Brazil DDI)
+                if phone.startswith('55'):
+                     # Likely 55 + DDD + 8 digits (e.g. 55 11 9999 8888 -> 11 digits)
+                     # We need to add the 9.
+                     # Format: 55 PP NNNN NNNN -> 55 PP 9 NNNN NNNN
+                     ddd = phone[2:4]
+                     number = phone[4:]
+                     phone = f"55{ddd}9{number}"
+                     logging.info(f"Auto-corrected phone (added 9 to 55 number): {phone}")
+                else:
+                    # Likely DDD + 9 digits (e.g. 11 99999 8888). Add 55.
+                     phone = f"55{phone}"
+                     logging.info(f"Auto-corrected phone (added 55): {phone}")
+
+            elif len(phone) == 12:
+                # Likely 55 + DDD + 9 digits is 13 digits.
+                # 55 + DDD + 8 digits is 12 digits? No, 2+2+8=12. 
+                # If 12 digits, it is likely 55 + DDD + 8 digits. (e.g. 55 11 8888 7777)
+                if phone.startswith('55'):
+                    # Insert 9 after DDD
+                    ddd = phone[2:4]
+                    number = phone[4:]
+                    phone = f"55{ddd}9{number}"
+                    logging.info(f"Auto-corrected phone (added 9 to 12-digit number): {phone}")
+            
+            elif len(phone) == 8 or len(phone) == 9:
+                 logging.warning(f"Phone number {phone} is too short. Skipping auto-correction, might fail.")
+            
+            # Case where it is already 13 digits (55 + DDD + 9 + 8 digits) -> Do nothing
+
             
             # Choose message
             if messages_list:

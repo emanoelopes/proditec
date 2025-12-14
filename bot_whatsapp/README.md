@@ -60,6 +60,27 @@ Com o ambiente virtual ativado (`source .venv/bin/activate`), execute:
 python main.py --csv contatos.csv --message-file mensagem.txt
 ```
 
+### Usando variações de mensagens (Aleatório - Recomendado para evitar Spam):
+Você pode criar um arquivo JSON (ex: `messages.json`) contendo uma lista de mensagens. O bot escolherá aleatoriamente uma delas para cada contato.
+Isso ajuda a reduzir o risco de bloqueio pelo WhatsApp.
+
+**Exemplo de (messages.json):**
+```json
+[
+  "Olá {name}, confira nosso novo produto!",
+  "Oi {name}, temos uma oferta especial para você.",
+  "Saudações {name}, veja o que preparamos."
+]
+```
+
+**Comando:**
+```bash
+python main.py --csv contatos.csv --messages-json messages.json
+```
+
+**Nota sobre Limpeza de Telefones:**
+O bot agora realiza limpeza automática dos números de telefone no arquivo CSV. Formatos como `(85) 9999-8888`, `85 9999 8888` ou `+55 (85) 9999-8888` são automaticamente convertidos para apenas números (ex: `8599998888` ou `558599998888`). O código de país (55) deve estar presente ou o número deve estar correto para envio.
+
 ### Usando mensagem direto no comando:
 ```bash
 python main.py --csv contatos.csv --message "Olá {name}, isso é um teste!"
