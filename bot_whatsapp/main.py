@@ -5,7 +5,11 @@ import time
 import sys
 import os
 from datetime import datetime
+from datetime import datetime
 from bot import WhatsAppBot
+import json
+import random
+import re
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -14,11 +18,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 @click.option('--csv', required=True, type=click.Path(exists=True), help='Path to the CSV file containing contacts.')
 @click.option('--message', required=False, help='Message to send. Use {name} for personalization if the CSV has a "name" column.')
 @click.option('--message-file', required=False, type=click.Path(exists=True), help='Path to a text file containing the message.')
+@click.option('--messages-json', required=False, type=click.Path(exists=True), help='Path to a JSON file containing a list of messages.')
 @click.option('--batch-size', default=50, help='Number of messages to send before pausing (to avoid bans).')
 @click.option('--batch-pause', default=60, help='Pause time in seconds between batches.')
 @click.option('--phone-col', default='phone', help='Column name for phone numbers in the CSV.')
 @click.option('--name-col', default='name', help='Column name for names (optional) for personalization.')
-def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_col):
+def main(csv, message, message_file, messages_json, batch_size, batch_pause, phone_col, name_col):
     """
     WhatsApp Mass Messenger Bot.
     
@@ -31,10 +36,18 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
         click.echo(f"Error: CSV file '{csv}' not found.")
         sys.exit(1)
 
-    # Validate message source
-    if not message and not message_file:
-        click.echo("Error: You must provide either --message or --message-file.")
-        sys.exit(1)
+    if messages_json:
+        try:
+            with open(messages_json, 'r', encoding='utf-8') as f:
+                messages_list = json.load(f)
+                if not isinstance(messages_list, list) or len(messages_list) == 0:
+                     click.echo(f"Error: JSON file must contain a non-empty list of strings.")
+                     sys.exit(1)
+        except Exception as e:
+            click.echo(f"Error reading messages JSON: {e}")
+            sys.exit(1)
+    else:
+        messages_list = None 
 
     if message_file:
         try:
@@ -43,6 +56,11 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
         except Exception as e:
             click.echo(f"Error reading message file: {e}")
             sys.exit(1)
+
+    # Validate message source
+    if not message and not message_file and not messages_list:
+        click.echo("Error: You must provide --message, --message-file, or --messages-json.")
+        sys.exit(1)
 
     try:
         df = pd.read_csv(csv)
@@ -85,11 +103,24 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
         
         # Filter
         initial_count = len(df)
-        df_to_process = df[~df[phone_col].isin(sent_phones)]
+        
+        # Helper to clean phone for comparison
+        def clean_phone(p):
+            return re.sub(r'\D', '', str(p))
+            
+        df['clean_phone'] = df[phone_col].apply(clean_phone)
+        
+        df_to_process = df[~df['clean_phone'].isin(sent_phones)]
+        # cleanup temp column
+        df.drop(columns=['clean_phone'], inplace=True)
+        
         skipped_count = initial_count - len(df_to_process)
         
         if skipped_count > 0:
             click.echo(f"Skipping {skipped_count} contacts that were already found in previous reports.")
+            # Permanently remove them from the source file as requested
+            df_to_process.to_csv(csv, index=False)
+            click.echo(f"Updated {csv} to remove these contacts permanently.")
         else:
             click.echo("No contacts skipped (none matched previous reports).")
             
@@ -121,11 +152,15 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
 
             phone = str(row[phone_col])
             
-            # Simple cleaning of phone numbers (remove spaces, etc if needed)
-            # This expects numbers to be in international format or close to it.
-            # You might want to add more robust cleaning here.
+            # Robust phone cleaning
+            # Remove everything that is not a digit
+            phone = re.sub(r'\D', '', phone)
             
-            msg_to_send = message
+            # Choose message
+            if messages_list:
+                msg_to_send = random.choice(messages_list)
+            else:
+                msg_to_send = message
             
             # Personalization
             if name_col in df.columns and pd.notna(row[name_col]):
@@ -151,8 +186,17 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
             
         click.echo("All messages processed.")
 
-        # Generate Report
-        if delivered_contacts:
+        if not delivered_contacts:
+            click.echo("No messages were sent in this session.")
+        
+    except KeyboardInterrupt:
+        click.echo("\nInterrupted by user.")
+    except Exception as e:
+        click.echo(f"An error occurred: {e}")
+    finally:
+        # Save progress if there are delivered contacts
+        if 'delivered_contacts' in locals() and delivered_contacts:
+            click.echo("Saving delivery report and updating contacts file...")
             report_filename = f"delivered_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
             report_df = pd.DataFrame(delivered_contacts)
             report_df.to_csv(report_filename, index=False)
@@ -162,14 +206,7 @@ def main(csv, message, message_file, batch_size, batch_pause, phone_col, name_co
             df_remaining = df.drop(indices_to_drop)
             df_remaining.to_csv(csv, index=False)
             click.echo(f"Updated contacts file: {csv} (Removed {len(indices_to_drop)} sent contacts)")
-        else:
-            click.echo("No messages were sent, so no report or CSV update needed.")
         
-    except KeyboardInterrupt:
-        click.echo("\nInterrupted by user.")
-    except Exception as e:
-        click.echo(f"An error occurred: {e}")
-    finally:
         bot.stop()
 
 if __name__ == '__main__':
