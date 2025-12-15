@@ -1,8 +1,6 @@
 .env
 real_data.json
 real_data.json.bak
-bot_whatsapp/delivered_report_*.csv
-bot_whatsapp/nao_confirmados.csv
+bot_whatsapp/*.csv
 bot_whatsapp/msg.txt
-bot_whatsapp/contacts_example.csv
-bot_whatsapp/contatos.csv
+bot_whatsapp/sent_phones_list.txt
