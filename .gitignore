@@ -4,3 +4,4 @@ real_data.json.bak
 bot_whatsapp/*.csv
 bot_whatsapp/msg.txt
 bot_whatsapp/sent_phones_list.txt
+sent_phones_list.txt
