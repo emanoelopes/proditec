@@ -1,22 +1,16 @@
 version: '3.8'
 
 services:
-  webapp:
+  app:
     build: .
-    container_name: proditec-webapp
-    ports:
-      - "8501:8501"
+    container_name: proditec-app
     volumes:
-      - .:/app
+      - ./data:/app/data
+      - ./config:/app/config
     environment:
       - PYTHONUNBUFFERED=1
-    command: streamlit run webapp/home.py --server.address=0.0.0.0
-  # Bot service (optional, uncomment to use)
-  # bot:
+    command: python -m src.main --scraper basic # Default command, change as needed
+  # Webapp (if migrated to src/webapp or similar)
+  # webapp:
   #   build: .
-  #   container_name: proditec-bot
-  #   volumes:
-  #     - .:/app
-  #   environment:
-  #     - DISPLAY=:99
-  #   command: sh -c "Xvfb :99 -screen 0 1280x1024x24 & python main.py"
+  #   command: streamlit run src/webapp/home.py --server.address=0.0.0.0

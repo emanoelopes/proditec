@@ -20,7 +20,7 @@ def inspect_tab():
     try:
         service = build('sheets', 'v4', credentials=creds)
         spreadsheet_id = '1IldiJwcZFkxNEpZ5nUj0ZodGkf3QgUhY1VcLzklDNs8'
-        aba_alvo = 'Turma-Grupo-Cursita-Zap' # Nome exato conforme listado anteriormente
+        aba_alvo = 'UFC' # Nome exato conforme listado anteriormente
         
         print(f"Lendo primeiras linhas da aba: {aba_alvo}")
         

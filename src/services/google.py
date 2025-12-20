@@ -12,7 +12,17 @@ from googleapiclient.discovery import build
 import gspread
 from google.oauth2.credentials import Credentials as OAuthCredentials
 
-from config import SCOPES, TOKEN_FILE, CREDENTIALS_FILE
+from datetime import datetime
+from src.utils.i18n import t
+
+# Handle imports based on where the script is run
+try:
+    from config.meet_config import SCOPES, TOKEN_FILE, CREDENTIALS_FILE
+except ImportError:
+    # Fallback if config is not in pythonpath directly
+    import sys
+    sys.path.append(os.getcwd())
+    from config.meet_config import SCOPES, TOKEN_FILE, CREDENTIALS_FILE
 
 
 class GoogleIntegration:
@@ -61,7 +71,7 @@ class GoogleIntegration:
                         f"Arquivo credentials.json não encontrado em {CREDENTIALS_FILE}. "
                         "Por favor, baixe as credenciais OAuth2 do Google Cloud Console."
                     )
-                print("🔐 Autenticando com Google...")
+                print(t('scraper.browsing', url="Authentication"))
                 print("   Por favor, autorize o acesso no navegador que será aberto.")
                 flow = InstalledAppFlow.from_client_secrets_file(
                     CREDENTIALS_FILE, SCOPES)

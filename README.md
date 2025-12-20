@@ -1,76 +1,57 @@
-# PRODITEC AVAMEC Automation System
+# Sistema de Automação Proditec
 
-This project is a comprehensive automation suite designed for the PRODITEC AVAMEC environment. It integrates various tools to streamline administrative tasks, including course management, participant tracking, and communication.
+Sistema para automação de coleta e análise de dados do Avamec e Google Sheets.
 
-## Features
+## Estrutura do Projeto
 
-### 📊 Dashboard & Analytics
-- **Web Application**: A Streamlit-based dashboard (`webapp/home.py`) provides visual insights into course data.
-- **Evasion Tracking**: Monitor participant evasion rates and other key metrics.
-- **Data Visualization**: Interactive charts using Plotly and Seaborn.
+* `src/`: Código fonte da aplicação
+  * `src/core/`: Lógica principal de raspagem e processamento
+  * `src/services/`: Integrações com APIs externas (Google, etc)
+  * `src/utils/`: Utilitários gerais
+* `config/`: Arquivos de configuração e credenciais
+* `data/`: Dados gerados e arquivos de entrada (ignorados no git)
+* `scripts/`: Scripts utilitários diversos
+* `locales/`: Arquivos de tradução (i18n)
 
-### 🤖 Automation Bots
-- **WhatsApp Bot**: Automates communication via WhatsApp Web using Selenium (`bot_whatsapp`).
-- **Google Meet Integration**: Automates meeting management and participant tracking (`meet`).
-- **Avamec Automation**: Scripts to interact with the Avamec platform (`main.py`, `presencialidade`).
+## Instalação
 
-### 🛠️ Utilities
-- **Spreadsheet Management**: Tools to process and verify registration spreadsheets (`planilha_inscricao.ipynb`, `verifica_inscricao.py`).
-- **Email Verification**: Scripts to compare and validate email addresses (`src/compara_emails.py`).
+1. Clone o repositório
+2. Crie um ambiente virtual: `python3 -m venv .venv`
+3. Ative o ambiente: `source .venv/bin/activate`
+4. Instale as dependências: `pip install -r requirements.txt`
+5. Configure o arquivo `.env` (use `.env.example` como base)
+6. Coloque as credenciais do Google em `config/credentials.json` e `config/token.json` (se existir)
 
-## Getting Started
+## Como Usar
 
-### Prerequisites
-- Docker and Docker Compose (Recommended)
-- Python 3.9+ (for local installation)
-- Google Chrome (for Selenium-based bots)
+### Executar a Aplicação Principal
 
-### 🐳 Running with Docker
+```bash
+# Executar scraper básico (Turma B)
+python -m src.main --scraper basic
 
-The easiest way to run the application is using Docker.
+# Executar scraper completo (Turma A e B, todos os grupos)
+python -m src.main --scraper full
 
-1.  **Build and Run the Web App:**
-    ```bash
-    docker-compose up --build
-    ```
-    Access the dashboard at `http://localhost:8501`.
+# Mudar idioma para Inglês
+python -m src.main --lang en
+```
 
-2.  **Run Automation Scripts (Optional):**
-    To run scripts that require a display (like the WhatsApp bot) inside Docker, you may need to configure Xvfb or run them locally. The `docker-compose.yml` includes a commented-out service for this purpose.
+### Scripts Utilitários
 
-### 💻 Local Installation
+```bash
+# Baixar planilhas do Google (Selenium)
+python scripts/download_sheets_selenium.py
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd proditec
-    ```
+# Consolidar dados baixados
+python src/core/consolidate_grades.py
+```
 
-2.  **Install dependencies:**
-    ```bash
-    pip install .
-    ```
+## Docker
 
-3.  **Run the Web App:**
-    ```bash
-    streamlit run webapp/home.py
-    ```
+Para construir e rodar via Docker:
 
-4.  **Run Automation Scripts:**
-    Configure your `.env` file with necessary credentials (e.g., `AVAMEC_PASSWORD`).
-    ```bash
-    python main.py
-    ```
-
-## Project Structure
-
-- `webapp/`: Streamlit dashboard application.
-- `bot_whatsapp/`: WhatsApp automation scripts.
-- `meet/`: Google Meet integration and monitoring.
-- `src/`: General utility scripts.
-- `Dockerfile`: Container configuration.
-- `docker-compose.yml`: Service orchestration.
-
-## License
-
-[Add License Information Here]
+```bash
+docker-compose build
+docker-compose up
+```

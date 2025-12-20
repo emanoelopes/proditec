@@ -1,0 +1,16 @@
+{
+    "app": {
+        "title": "Sistema Proditec",
+        "starting": "Iniciando aplicação..."
+    },
+    "scraper": {
+        "start": "Iniciando raspagem de dados...",
+        "browsing": "Navegando para {url}",
+        "error": "Erro durante a raspagem: {msg}",
+        "success": "Dados extraídos com sucesso!"
+    },
+    "errors": {
+        "file_not_found": "Arquivo não encontrado: {path}",
+        "auth_failed": "Falha na autenticação"
+    }
+}

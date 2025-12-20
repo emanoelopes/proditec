@@ -1,0 +1,46 @@
+{
+    "turma": "Turma B",
+    "grupos": [
+        {
+            "grupo": "Grupo 01",
+            "total_students": 21
+        },
+        {
+            "grupo": "Grupo 02",
+            "total_students": 22
+        },
+        {
+            "grupo": "Grupo 03",
+            "total_students": 23
+        },
+        {
+            "grupo": "Grupo 04",
+            "total_students": 22
+        },
+        {
+            "grupo": "Grupo 05",
+            "total_students": 22
+        },
+        {
+            "grupo": "Grupo 06",
+            "total_students": 21
+        },
+        {
+            "grupo": "Grupo 07",
+            "total_students": 21
+        },
+        {
+            "grupo": "Grupo 08",
+            "total_students": 21
+        },
+        {
+            "grupo": "Grupo 09",
+            "total_students": 21
+        },
+        {
+            "grupo": "Grupo 10",
+            "total_students": 21
+        }
+    ],
+    "note": "Full student data with grades extracted via browser_subagent - details in subagent execution logs"
+}

@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup, NavigableString
+from src.utils.i18n import t
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -44,7 +45,7 @@ class AvamecScraper:
             return False
 
         try:
-            logger.info(f"Navigating to {AVAMEC_URL}...")
+            logger.info(t('scraper.browsing', url=AVAMEC_URL))
             self.driver.get(AVAMEC_URL)
 
             # Wait for the login form to appear

@@ -19,4 +19,5 @@ dependencies = [
     "google-auth-oauthlib>=1.0.0",
     "google-apps-meet>=0.0.1",
     "google-api-python-client>=2.0.0",
+    "scikit-learn>=1.6.1",
 ]

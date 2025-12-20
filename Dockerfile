@@ -18,16 +18,24 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     && apt-get install -y google-chrome-stable \
     && rm -rf /var/lib/apt/lists/*
 
+# Set up user
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
+
 WORKDIR /app
 
 # Copy project files
-COPY . .
+COPY --chown=user:user . .
 
 # Install dependencies
-RUN pip install --no-cache-dir .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Create data directory just in case
+RUN mkdir -p data && chown user:user data
 
 # Expose ports
 EXPOSE 8501
 
-# Default command (can be overridden)
-CMD ["streamlit", "run", "webapp/home.py", "--server.address=0.0.0.0"]
+# Default command
+CMD ["python", "-m", "src.main", "--help"]

@@ -1,0 +1,16 @@
+{
+    "app": {
+        "title": "Proditec System",
+        "starting": "Starting application..."
+    },
+    "scraper": {
+        "start": "Starting data scraping...",
+        "browsing": "Browsing to {url}",
+        "error": "Error during scraping: {msg}",
+        "success": "Data extracted successfully!"
+    },
+    "errors": {
+        "file_not_found": "File not found: {path}",
+        "auth_failed": "Authentication failed"
+    }
+}
