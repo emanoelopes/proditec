@@ -88,13 +88,67 @@ def consolidate_grades():
 
             df = pd.DataFrame(data_padded, columns=new_headers)
             
+            # FILTER OUT INVALID ROWS (metadata, observations, empty rows)
+            def is_valid_student_row(row):
+                try:
+                    first_col = str(row.iloc[0]).strip()
+                    second_col = str(row.iloc[1]).strip() if len(row) > 1 else ''
+                    
+                    # Empty first column - likely a metadata row
+                    if not first_col or first_col == '':
+                        return False
+                    
+                    # Check if first column is a number (ID column exists)
+                    is_numeric_id = False
+                    try:
+                        int(first_col)
+                        is_numeric_id = True
+                    except ValueError:
+                        pass
+                    
+                    if is_numeric_id:
+                        # Standard format: ID in col 0, Name in col 1
+                        # Must have a valid name in second column
+                        if not second_col or len(second_col) < 3:
+                            return False
+                        
+                        # Filter out known metadata keywords in name column
+                        second_upper = second_col.upper()
+                        invalid_keywords = ['AVAMEC', 'FREQUENCIA', 'RECUPERAÇÃO', 'DESISTENTE', 
+                                           'PRAZO', 'OBS', 'REC OK', 'SALA']
+                        if any(keyword in second_upper for keyword in invalid_keywords):
+                            return False
+                    else:
+                        # Alternative format: Name directly in col 0 (no ID column)
+                        # First column should be a valid name
+                        if len(first_col) < 3:
+                            return False
+                        
+                        # Filter out metadata keywords in first column
+                        first_upper = first_col.upper()
+                        invalid_keywords = ['AVAMEC', 'FREQUENCIA', 'RECUPERAÇÃO', 'DESISTENTE',
+                                           'PRAZO', 'OBS', 'REC OK', 'SALA', 'TOTAL', 'MÉDIA']
+                        if any(keyword in first_upper for keyword in invalid_keywords):
+                            return False
+                        
+                        # If it looks like a date or pure number sequence, skip
+                        if first_col.replace('/', '').replace('-', '').isdigit():
+                            return False
+                    
+                    return True
+                except (ValueError, IndexError, AttributeError):
+                    return False
+            
+            df_original_len = len(df)
+            df = df[df.apply(is_valid_student_row, axis=1)]
+            df_filtered_len = len(df)
+            
+            if df_original_len > df_filtered_len:
+                print(f"  - Filtered out {df_original_len - df_filtered_len} invalid rows")
+            
             # Add Source Metadata
             df['Source_Sheet_Title'] = title
             df['Source_URL'] = url
-            
-            # Attempt to extract Turma/Grupo from Title if possible
-            # e.g., "Turma A - Grupo 1"
-            # Adjust regex based on actual titles seen in output
             
             all_data.append(df)
             

@@ -6,6 +6,7 @@ from datetime import datetime
 import re
 from typing import List, Dict, Tuple
 import io
+import os
 
 class ComparadorEmails:
     """
@@ -259,6 +260,150 @@ def main():
     
     comparador = st.session_state.comparador
     
+
+    # Sidebar Navigation
+    st.sidebar.title("Navegação")
+    modo = st.sidebar.radio("Selecione o Modo:", ["Visão Geral", "Comparador de Emails", "Análise de Notas Avamec"], key="nav_mode")
+    
+    if modo == "Visão Geral":
+        render_overview()
+    elif modo == "Comparador de Emails":
+        render_email_comparator(comparador)
+    else:
+        render_grade_analysis()
+
+def render_overview():
+    st.header("📊 Visão Geral - PRODITEC")
+    
+    # Path to consolidated file
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    csv_path = os.path.join(base_dir, 'data', 'grades_consolidados.csv')
+    
+    if not os.path.exists(csv_path):
+        st.error(f"Arquivo de dados não encontrado em: {csv_path}")
+        st.info("Execute o script de consolidação primeiro.")
+        return
+    
+    try:
+        # Load data
+        df = pd.read_csv(csv_path, header=0)
+        
+        # Find group column
+        group_col = None
+        for col in df.columns:
+            if df[col].astype(str).str.contains('Turma [AB]', regex=True, na=False).any():
+                group_col = col
+                break
+        
+        if not group_col:
+            st.error("Não foi possível identificar a coluna de grupos.")
+            return
+        
+        # Extract Turma info
+        df['Turma'] = df[group_col].astype(str).str.extract(r'(Turma [AB] - Grupo \d+)', expand=False)
+        
+        # Filter valid groups
+        df_valid = df[df['Turma'].notna()]
+        
+        # Calculate metrics
+        total_grupos = df_valid['Turma'].nunique()
+        total_cursistas = len(df_valid)
+        
+        # Find Sala columns
+        sala_cols = [c for c in df.columns if 'Sala' in c and c != 'Sala']
+        
+        # Count groups with missing grades
+        grupos_com_falta = set()
+        for grupo in df_valid['Turma'].unique():
+            df_grupo = df_valid[df_valid['Turma'] == grupo]
+            
+            # Check if any student in this group has missing grades
+            for _, row in df_grupo.iterrows():
+                for sala in sala_cols:
+                    valor = str(row[sala]).strip()
+                    # Only empty cells, not zeros
+                    if valor in ['', 'nan', 'NaN'] or pd.isna(row[sala]):
+                        grupos_com_falta.add(grupo)
+                        break
+                if grupo in grupos_com_falta:
+                    break
+        
+        qtd_grupos_com_falta = len(grupos_com_falta)
+        
+        # Display metrics
+        st.markdown("### 📈 Métricas Gerais")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.metric(
+                label="Total de Grupos",
+                value=total_grupos,
+                help="Número total de grupos (Turma A e B)"
+            )
+        
+        with col2:
+            st.metric(
+                label="Total de Cursistas",
+                value=total_cursistas,
+                help="Número total de cursistas em todos os grupos"
+            )
+        
+        with col3:
+            st.metric(
+                label="Grupos com Notas Faltantes",
+                value=qtd_grupos_com_falta,
+                delta=f"-{total_grupos - qtd_grupos_com_falta} completos",
+                delta_color="inverse",
+                help="Grupos que possuem pelo menos uma atividade sem nota lançada"
+            )
+        
+        # Detailed breakdown
+        st.markdown("---")
+        st.markdown("### 📋 Detalhamento por Grupo")
+        
+        # Create summary table
+        grupo_data = []
+        for grupo in sorted(df_valid['Turma'].unique()):
+            df_grupo = df_valid[df_valid['Turma'] == grupo]
+            qtd_alunos = len(df_grupo)
+            
+            # Count missing grades
+            total_missing = 0
+            for _, row in df_grupo.iterrows():
+                for sala in sala_cols:
+                    valor = str(row[sala]).strip()
+                    if valor in ['', 'nan', 'NaN'] or pd.isna(row[sala]):
+                        total_missing += 1
+            
+            status = "✅ Completo" if total_missing == 0 else f"⚠️ {total_missing} notas faltando"
+            
+            grupo_data.append({
+                'Grupo': grupo,
+                'Cursistas': qtd_alunos,
+                'Notas Faltantes': total_missing,
+                'Status': status
+            })
+        
+        grupo_df = pd.DataFrame(grupo_data)
+        st.dataframe(grupo_df, use_container_width=True, hide_index=True)
+        
+        # Chart: Groups with missing grades
+        st.markdown("---")
+        st.markdown("### 📊 Distribuição de Notas Faltantes por Grupo")
+        
+        fig_data = grupo_df[grupo_df['Notas Faltantes'] > 0].sort_values('Notas Faltantes', ascending=False)
+        if not fig_data.empty:
+            st.bar_chart(fig_data.set_index('Grupo')['Notas Faltantes'])
+        else:
+            st.success("🎉 Todos os grupos estão com as notas completas!")
+        
+    except Exception as e:
+        st.error(f"Erro ao processar dados: {e}")
+        import traceback
+        st.code(traceback.format_exc())
+
+def render_email_comparator(comparador):
     # Sidebar para upload de arquivos
     st.sidebar.header("📁 Upload de Arquivos")
     
@@ -302,6 +447,8 @@ def main():
             comparador.carregar_grupos_tematicos(arquivo_grupos, formato_grupos)
     
     # Conteúdo principal
+    st.header("📧 Comparador de Emails")
+    
     if comparador.participantes_df is not None and comparador.convidados_df is not None:
         
         # Botão para executar comparação
@@ -396,6 +543,137 @@ def main():
         4. Clique em "Executar Comparação" para analisar os dados
         """)
 
+def render_grade_analysis():
+    st.header("📊 Análise de Notas Avamec")
+    
+    # Path to consolidated file
+    # We navigate up from src/ to data/
+    # script is in src/, so .. is base
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    csv_path = os.path.join(base_dir, 'data', 'grades_consolidados.csv')
+    
+    if not os.path.exists(csv_path):
+        st.error(f"Arquivo de dados não encontrado em: {csv_path}")
+        st.info("Execute o script de consolidação primeiro.")
+        return
+
+    try:
+        # Load Data with first row as header (where Sala 1, Sala 2, etc. are defined)
+        df = pd.read_csv(csv_path, header=0)
+        
+        # The CSV has technical column names in row 0 and human-readable in row 1
+        # Since we used header=0, we get the technical names like "Sala 1", "Sala 2"
+        
+        # Clean columns if needed?
+        # The column 'Turma B - Grupo 01' in the *first* row might not be capturing properly if we skip it.
+        # But wait, the group info is in the DATA rows too? 
+        # Step 702 output: Row 5 ends with "...Reprovado,Turma B - Grupo 01,https://..."
+        # So there is a column for Group. We need to find its name.
+        # Let's load with header=1 and see if we can identify the group column.
+        # It seems the last columns are 'Source_Sheet_Title'.
+        
+        # Debug: show column structure
+        # st.write("Columns:", df.columns.tolist())
+        
+        # Find the column that contains "Turma A" or "Turma B" in its VALUES (not column name)
+        group_col = None
+        for col in df.columns:
+            if df[col].astype(str).str.contains('Turma [AB]', regex=True, na=False).any():
+                group_col = col
+                break
+        
+        if group_col:
+            st.sidebar.subheader("Filtros")
+            
+            # Extract Turma from the values in group_col (e.g., "Turma B - Grupo 01" -> "Turma B")
+            df['Turma'] = df[group_col].astype(str).str.extract(r'(Turma [AB])', expand=False)
+            
+            # Filter 1: Select Turma
+            turmas = sorted([t for t in df['Turma'].dropna().unique() if t != 'nan'])
+            
+            if len(turmas) == 0:
+                st.error("Nenhuma turma encontrada nos dados.")
+                st.write("Debug - Valores únicos na coluna:", df[group_col].unique()[:10])
+                return
+            
+            selected_turma = st.sidebar.selectbox("1. Selecione a Turma:", turmas, key="select_turma")
+            
+            # Filter data by Turma
+            df_turma = df[df['Turma'] == selected_turma]
+            
+            # Filter 2: Select Student Name
+            # Find the column with student names
+            name_col = next((c for c in df.columns if 'Nome' in c and 'Completo' in c), None)
+            if name_col:
+                students = sorted([s for s in df_turma[name_col].dropna().unique() if str(s) != 'nan' and s])
+                selected_student = st.sidebar.selectbox("2. Selecione o Cursista:", ["Todos"] + list(students), key="select_student")
+                
+                if selected_student != "Todos":
+                    filtered_df = df_turma[df_turma[name_col] == selected_student]
+                else:
+                    filtered_df = df_turma
+            else:
+                filtered_df = df_turma
+                st.warning("Coluna de nomes não encontrada.")
+            
+            # Build display text
+            if name_col and selected_student != "Todos":
+                display_text = f"{selected_turma} - {selected_student}"
+            else:
+                display_text = selected_turma
+            
+            st.markdown(f"### Visualizando: {display_text}")
+            st.metric("Total de Alunos", len(filtered_df))
+            
+            # Show names and grades
+            # Filter columns to only show Name and potential grade columns (Sala X)
+            # Find columns that look like "Sala" or "Ambientação"
+            cols_to_show = [c for c in df.columns if 'Nome' in c or 'Sala' in c or 'Ambientação' in c]
+            
+            if not cols_to_show:
+                cols_to_show = df.columns
+            
+            st.dataframe(filtered_df[cols_to_show], use_container_width=True)
+            
+            # Additional Analysis: Grading Status
+            st.subheader("📊 Status de Lançamento de Notas")
+            st.markdown("*Mostra quantos alunos têm notas lançadas em cada atividade/sala. **Nota:** Zero é considerado nota válida.*")
+            
+            # Calculate how many non-null/non-zero values in Sala columns
+            sala_cols = [c for c in cols_to_show if 'Sala' in c]
+            
+            # Debug
+            st.write(f"**Debug:** Encontradas {len(sala_cols)} colunas de Sala para análise")
+            
+            if len(sala_cols) == 0:
+                st.warning("Nenhuma coluna de 'Sala' foi encontrada nos dados. Verifique a estrutura do arquivo.")
+            else:
+                status_data = []
+                for col in sala_cols:
+                    # Count filled cells (including zeros)
+                    # Only empty/null cells are considered missing
+                    valid_count = filtered_df[col].apply(
+                        lambda x: 0 if (pd.isna(x) or str(x).strip() in ['', 'nan', 'NaN']) else 1
+                    ).sum()
+                    status_data.append({'Atividade': col, 'Notas Lançadas': valid_count, 'Total Alunos': len(filtered_df)})
+                    
+                status_df = pd.DataFrame(status_data)
+                if not status_df.empty:
+                    st.bar_chart(status_df.set_index('Atividade')['Notas Lançadas'])
+                    
+                    # Also show as table for clarity
+                    st.dataframe(status_df, use_container_width=True)
+                else:
+                    st.info("Nenhum dado de status disponível.")
+            
+        else:
+            st.warning("Não foi possível identificar a coluna de Turma/Grupo.")
+            st.dataframe(df.head())
+
+    except Exception as e:
+        st.error(f"Erro ao ler arquivo de dados: {e}")
 
 if __name__ == "__main__":
     main()
+
+

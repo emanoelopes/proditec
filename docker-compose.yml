@@ -7,10 +7,19 @@ services:
     volumes:
       - ./data:/app/data
       - ./config:/app/config
+      - ./src:/app/src
+      - ./locales:/app/locales
     environment:
       - PYTHONUNBUFFERED=1
     command: python -m src.main --scraper basic # Default command, change as needed
-  # Webapp (if migrated to src/webapp or similar)
-  # webapp:
-  #   build: .
-  #   command: streamlit run src/webapp/home.py --server.address=0.0.0.0
+  
+  dashboard:
+    build: .
+    container_name: proditec-dashboard
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./src:/app/src
+    ports:
+      - "8501:8501"
+    command: streamlit run src/compara_emails.py --server.address=0.0.0.0
