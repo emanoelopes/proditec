@@ -1,0 +1,111 @@
+{
+  "data_extracao": "2025-12-24T16:07:14.767275",
+  "total_alunos": 21,
+  "alunos": [
+    {
+      "nome": "Andressa Mariele Ribeiro Pereira de Souza",
+      "situacao_parcial": "9.6",
+      "data_extracao": "2025-12-24T16:07:14.254563"
+    },
+    {
+      "nome": "Antonia Núbia Nonato Evangelista",
+      "situacao_parcial": "9.7",
+      "data_extracao": "2025-12-24T16:07:14.280689"
+    },
+    {
+      "nome": "Cássia de Almeida Rocha",
+      "situacao_parcial": "9.6",
+      "data_extracao": "2025-12-24T16:07:14.306542"
+    },
+    {
+      "nome": "Cleuzeni Maria de Jesus",
+      "situacao_parcial": "1.3",
+      "data_extracao": "2025-12-24T16:07:14.332021"
+    },
+    {
+      "nome": "Crispiniana María da Cunha",
+      "situacao_parcial": "0",
+      "data_extracao": "2025-12-24T16:07:14.358880"
+    },
+    {
+      "nome": "Edineide Alves de Sousa Silva",
+      "situacao_parcial": "2.8",
+      "data_extracao": "2025-12-24T16:07:14.386396"
+    },
+    {
+      "nome": "Ilma Celia GUEDES Santos",
+      "situacao_parcial": "9.9",
+      "data_extracao": "2025-12-24T16:07:14.411565"
+    },
+    {
+      "nome": "Jose Carlos de Oliveira Cruz",
+      "situacao_parcial": "9.5",
+      "data_extracao": "2025-12-24T16:07:14.434925"
+    },
+    {
+      "nome": "JULIA GRACIELA FERREIRA BISPO",
+      "situacao_parcial": "8.8",
+      "data_extracao": "2025-12-24T16:07:14.456837"
+    },
+    {
+      "nome": "Laudiene Justino Gomes Miranda",
+      "situacao_parcial": "9.6",
+      "data_extracao": "2025-12-24T16:07:14.479592"
+    },
+    {
+      "nome": "Leliam Borges Santos Dias",
+      "situacao_parcial": "9.7",
+      "data_extracao": "2025-12-24T16:07:14.504819"
+    },
+    {
+      "nome": "Luciane Aparecida Rodrigues",
+      "situacao_parcial": "9.9",
+      "data_extracao": "2025-12-24T16:07:14.532015"
+    },
+    {
+      "nome": "Marcia da Silva de Melo Medeiros",
+      "situacao_parcial": "9.4",
+      "data_extracao": "2025-12-24T16:07:14.560094"
+    },
+    {
+      "nome": "Nédia Maria da Silva Garcia",
+      "situacao_parcial": "0",
+      "data_extracao": "2025-12-24T16:07:14.587155"
+    },
+    {
+      "nome": "Nely Aparecida de Oliveira Riquelme",
+      "situacao_parcial": "0",
+      "data_extracao": "2025-12-24T16:07:14.610600"
+    },
+    {
+      "nome": "Raquel Aparecida Vivi Convento",
+      "situacao_parcial": "9.6",
+      "data_extracao": "2025-12-24T16:07:14.640700"
+    },
+    {
+      "nome": "Renato Milke Muniz",
+      "situacao_parcial": "3.7",
+      "data_extracao": "2025-12-24T16:07:14.675837"
+    },
+    {
+      "nome": "Rosângela Alves de Freitas Costa",
+      "situacao_parcial": "9.6",
+      "data_extracao": "2025-12-24T16:07:14.697922"
+    },
+    {
+      "nome": "Tatiane Ribeiro do Nascimento",
+      "situacao_parcial": "9.9",
+      "data_extracao": "2025-12-24T16:07:14.721052"
+    },
+    {
+      "nome": "Vânia Luiza Pachêco Sá Martins",
+      "situacao_parcial": "0",
+      "data_extracao": "2025-12-24T16:07:14.745029"
+    },
+    {
+      "nome": "Zeiny Talita Francisca Favalessa",
+      "situacao_parcial": "3.8",
+      "data_extracao": "2025-12-24T16:07:14.766823"
+    }
+  ]
+}
