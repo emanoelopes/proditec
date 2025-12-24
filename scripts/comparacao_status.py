@@ -15,7 +15,12 @@ def create_comparison_table():
     
     # Arquivos
     grades_file = os.path.join(base_dir, 'data/grades_consolidados.csv')
-    avamec_file = os.path.join(base_dir, 'data/avamec_status_situacao.json')
+    
+    # Tentar arquivo completo primeiro, depois o parcial
+    avamec_file = os.path.join(base_dir, 'data/avamec_completo.json')
+    if not os.path.exists(avamec_file):
+        avamec_file = os.path.join(base_dir, 'data/avamec_status_situacao.json')
+    
     
     print("=" * 100)
     print("TABELA COMPARATIVA: STATUS FINAL (PLANILHAS) vs SITUAÇÃO PARCIAL (AVAMEC)")
@@ -28,6 +33,8 @@ def create_comparison_table():
         return
     
     df_grades = pd.read_csv(grades_file, header=0)
+    
+    # Dados já vêm filtrados (sem cancelados/desistentes) da consolidação
     
     # Carregar dados do Avamec
     avamec_data = {}
@@ -65,11 +72,25 @@ def create_comparison_table():
         # Buscar no Avamec
         situacao_avamec = avamec_data.get(nome_upper, '—')
         
+        # Determinar status da nota
+        if situacao_avamec == '—':
+            status_nota = '⏳ Aguardando lançamento'
+        else:
+            try:
+                nota = float(situacao_avamec)
+                if nota == 0:
+                    status_nota = '⚠️ Zero lançado'
+                else:
+                    status_nota = '✅ Lançada'
+            except (ValueError, TypeError):
+                status_nota = '❓ Verificar'
+        
         comparacao.append({
             'Nome': nome,
             'Grupo': grupo,
             'Status Final (Planilhas)': status_final,
-            'Situação Parcial (Avamec)': situacao_avamec
+            'Situação Parcial (Avamec)': situacao_avamec,
+            'Status da Nota': status_nota
         })
     
     # Criar DataFrame
@@ -78,29 +99,33 @@ def create_comparison_table():
     # Ordenar
     df_comp = df_comp.sort_values(['Grupo', 'Nome'])
     
+    
     # Estatísticas
     total = len(df_comp)
     com_avamec = len([x for x in df_comp['Situação Parcial (Avamec)'] if x != '—'])
+    aguardando = len([x for x in df_comp['Status da Nota'] if 'Aguardando' in x])
     
     print(f"📊 Total de cursistas: {total}")
     print(f"📊 Com dados do Avamec: {com_avamec}")
     print(f"📊 Sem dados do Avamec: {total - com_avamec}")
+    print(f"⏳ Aguardando lançamento: {aguardando}")
     print()
     
     # Mostrar tabela
-    print("=" * 100)
-    print(f"{'Nome':<40} {'Grupo':<22} {'Status Final':<15} {'Situação Avamec':<15}")
-    print("=" * 100)
+    print("=" * 115)
+    print(f"{'Nome':<40} {'Grupo':<22} {'Status Final':<15} {'Situação':<10} {'Status da Nota':<25}")
+    print("=" * 115)
     
     for _, row in df_comp.iterrows():
         nome = row['Nome'][:38]
         grupo = str(row['Grupo'])[:20]
         status = row['Status Final (Planilhas)'][:13]
-        avamec = str(row['Situação Parcial (Avamec)'])[:13]
+        avamec = str(row['Situação Parcial (Avamec)'])[:8]
+        status_nota = row['Status da Nota'][:23]
         
-        print(f"{nome:<40} {grupo:<22} {status:<15} {avamec:<15}")
+        print(f"{nome:<40} {grupo:<22} {status:<15} {avamec:<10} {status_nota:<25}")
     
-    print("=" * 100)
+    print("=" * 115)
     print()
     
     # Salvar em CSV para análise

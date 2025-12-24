@@ -1,0 +1,1286 @@
+{
+  "data_extracao": "2025-12-24T16:32:48.048842",
+  "turma": "Turma B",
+  "total_grupos": 10,
+  "total_alunos": 213,
+  "alunos": [
+    {
+      "nome": "Andressa Mariele Ribeiro Pereira de Souza",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.312797"
+    },
+    {
+      "nome": "Antonia Núbia Nonato Evangelista",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.342005"
+    },
+    {
+      "nome": "Cássia de Almeida Rocha",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.367586"
+    },
+    {
+      "nome": "Cleuzeni Maria de Jesus",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.391573"
+    },
+    {
+      "nome": "Crispiniana María da Cunha",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.415381"
+    },
+    {
+      "nome": "Edineide Alves de Sousa Silva",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.439866"
+    },
+    {
+      "nome": "Ilma Celia GUEDES Santos",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.463693"
+    },
+    {
+      "nome": "Jose Carlos de Oliveira Cruz",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.489062"
+    },
+    {
+      "nome": "JULIA GRACIELA FERREIRA BISPO",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.514766"
+    },
+    {
+      "nome": "Laudiene Justino Gomes Miranda",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.539310"
+    },
+    {
+      "nome": "Leliam Borges Santos Dias",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.562947"
+    },
+    {
+      "nome": "Luciane Aparecida Rodrigues",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.586149"
+    },
+    {
+      "nome": "Marcia da Silva de Melo Medeiros",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.608500"
+    },
+    {
+      "nome": "Nédia Maria da Silva Garcia",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.632792"
+    },
+    {
+      "nome": "Nely Aparecida de Oliveira Riquelme",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.656425"
+    },
+    {
+      "nome": "Raquel Aparecida Vivi Convento",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.681199"
+    },
+    {
+      "nome": "Renato Milke Muniz",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.704439"
+    },
+    {
+      "nome": "Rosângela Alves de Freitas Costa",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.728619"
+    },
+    {
+      "nome": "Tatiane Ribeiro do Nascimento",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.753225"
+    },
+    {
+      "nome": "Vânia Luiza Pachêco Sá Martins",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.786163"
+    },
+    {
+      "nome": "Zeiny Talita Francisca Favalessa",
+      "grupo": "Turma B - Grupo 01",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:43.825582"
+    },
+    {
+      "nome": "Andressa Mariele Ribeiro Pereira de Souza",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.008321"
+    },
+    {
+      "nome": "Antonia Núbia Nonato Evangelista",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.040243"
+    },
+    {
+      "nome": "Cássia de Almeida Rocha",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.069963"
+    },
+    {
+      "nome": "Cleuzeni Maria de Jesus",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.100763"
+    },
+    {
+      "nome": "Crispiniana María da Cunha",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.131116"
+    },
+    {
+      "nome": "Edineide Alves de Sousa Silva",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.162543"
+    },
+    {
+      "nome": "Ilma Celia GUEDES Santos",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.191340"
+    },
+    {
+      "nome": "Jose Carlos de Oliveira Cruz",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.220847"
+    },
+    {
+      "nome": "JULIA GRACIELA FERREIRA BISPO",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.248451"
+    },
+    {
+      "nome": "Laudiene Justino Gomes Miranda",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.270782"
+    },
+    {
+      "nome": "Leliam Borges Santos Dias",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.292160"
+    },
+    {
+      "nome": "Luciane Aparecida Rodrigues",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.314530"
+    },
+    {
+      "nome": "Marcia da Silva de Melo Medeiros",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.337648"
+    },
+    {
+      "nome": "Nédia Maria da Silva Garcia",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.360767"
+    },
+    {
+      "nome": "Nely Aparecida de Oliveira Riquelme",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.382820"
+    },
+    {
+      "nome": "Raquel Aparecida Vivi Convento",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.408231"
+    },
+    {
+      "nome": "Renato Milke Muniz",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.431747"
+    },
+    {
+      "nome": "Rosângela Alves de Freitas Costa",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.453207"
+    },
+    {
+      "nome": "Tatiane Ribeiro do Nascimento",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.476043"
+    },
+    {
+      "nome": "Vânia Luiza Pachêco Sá Martins",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.500508"
+    },
+    {
+      "nome": "Zeiny Talita Francisca Favalessa",
+      "grupo": "Turma B - Grupo 02",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:29:51.535303"
+    },
+    {
+      "nome": "Adriana Baptista",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.192580"
+    },
+    {
+      "nome": "Arlete Aparecida Berro Burin",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "2.8\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.217492"
+    },
+    {
+      "nome": "Clemilda Maria Lima dos Santos",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "5\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.245460"
+    },
+    {
+      "nome": "Eleniudo Roque de Moura",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.272706"
+    },
+    {
+      "nome": "Elisabete Cristina de Oliveira Giopato",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.299104"
+    },
+    {
+      "nome": "Eraldo Francisco da Silva Junior",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.323867"
+    },
+    {
+      "nome": "GISLAINNE DEISE CARNIATTO PORTO",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.348411"
+    },
+    {
+      "nome": "Jacy Lagoa lopes",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.371783"
+    },
+    {
+      "nome": "João Paulo de Tarso Memoria",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.8\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.393125"
+    },
+    {
+      "nome": "Joziene Marcelino de Araújo Tavares",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.415011"
+    },
+    {
+      "nome": "Kelly Rosa Lima",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.437239"
+    },
+    {
+      "nome": "Luciene Dos Reis Silva",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.459205"
+    },
+    {
+      "nome": "Lucivânia Noberto Moreira",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.481984"
+    },
+    {
+      "nome": "MARCICLEIDE LEITE LOPES",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.8\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.503028"
+    },
+    {
+      "nome": "Maria Francinete Ferreira Frazao",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "8.7\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.526640"
+    },
+    {
+      "nome": "Miriam Cristina Macedo da Silva",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "0.5\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.554332"
+    },
+    {
+      "nome": "Nilza Batista Da Silva Medeiros",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.614801"
+    },
+    {
+      "nome": "PEDRO DA SILVA RODRIGUES",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.682025"
+    },
+    {
+      "nome": "Reinaldo Marques Lopes",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.721542"
+    },
+    {
+      "nome": "Salvadora Benedita Leite da Silva",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "2.7\nReprovado",
+      "data_extracao": "2025-12-24T16:30:38.762081"
+    },
+    {
+      "nome": "Sandra Kátia dos Santos",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.807119"
+    },
+    {
+      "nome": "Viviane Barbosa dos Santos",
+      "grupo": "Turma B - Grupo 03",
+      "situacao_parcial": "9.1\nAprovado",
+      "data_extracao": "2025-12-24T16:30:38.829390"
+    },
+    {
+      "nome": "Alexsandra Guilherme de Brito",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.433052"
+    },
+    {
+      "nome": "Ana Caroline Barros Meira",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "0.4\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.466668"
+    },
+    {
+      "nome": "Aurora dos Santos Lopes",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "5.8\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.498630"
+    },
+    {
+      "nome": "Cristiane Aparecida Pereira da Cruz",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "8.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.530301"
+    },
+    {
+      "nome": "Dailza Bentes Vinente",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "1.8\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.562627"
+    },
+    {
+      "nome": "Danuza Dutra Peres Militão",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.594738"
+    },
+    {
+      "nome": "Dayvison dos Santos Honorato",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.627466"
+    },
+    {
+      "nome": "Domingas Maria da Silva",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.2\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.658479"
+    },
+    {
+      "nome": "ERIKA VIVIANE DE FARIAS RODRIGUES",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.691530"
+    },
+    {
+      "nome": "Fátima Aparecida Neves de Souza",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.721666"
+    },
+    {
+      "nome": "Joana da Luz de Almeida Batista",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.751550"
+    },
+    {
+      "nome": "Josete Fernandes dos Santos",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "7.8\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.799231"
+    },
+    {
+      "nome": "Larissa Rezek Barbosa",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.840964"
+    },
+    {
+      "nome": "Laurineide Aragão Rodrigues",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "1.9\nReprovado",
+      "data_extracao": "2025-12-24T16:31:01.884152"
+    },
+    {
+      "nome": "Maria Aldenir Ferreira",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.947730"
+    },
+    {
+      "nome": "OLGA OLIVEIRA VASCONCELOS",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.4\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.969979"
+    },
+    {
+      "nome": "Pedro Bruno de Lima Pereira",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:01.992698"
+    },
+    {
+      "nome": "Reginaldo Adriano Brisqueleal",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:31:02.015073"
+    },
+    {
+      "nome": "Rosineide Souza Silva Correia",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:02.036932"
+    },
+    {
+      "nome": "SONIVANIA CRISTINA DA COSTA",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9.8\nAprovado",
+      "data_extracao": "2025-12-24T16:31:02.063623"
+    },
+    {
+      "nome": "VALDIRENE CLAUDIA DA SILVA OLIVEIRA",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "1.5\nReprovado",
+      "data_extracao": "2025-12-24T16:31:02.090366"
+    },
+    {
+      "nome": "Veronica Nunes Vieira",
+      "grupo": "Turma B - Grupo 04",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:02.115685"
+    },
+    {
+      "nome": "ALTIENE GATO BEZERRA",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.517728"
+    },
+    {
+      "nome": "Andréa Santos da Silva",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.544748"
+    },
+    {
+      "nome": "ANTONIA ARYANNE MARQUES DE FREITAS",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.569805"
+    },
+    {
+      "nome": "BARTOLOMEU CAETANO DOS SANTOS FILHO",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.595989"
+    },
+    {
+      "nome": "Daiani Cristini Camargo Fonseca",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.622590"
+    },
+    {
+      "nome": "Damara Cavalcanti Pereira Leal",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.648056"
+    },
+    {
+      "nome": "DIVINO ANTONIO NOGUEIRA",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.674351"
+    },
+    {
+      "nome": "IVANILZA AREDES MONTEIRO FIGUEIREDO",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.700481"
+    },
+    {
+      "nome": "Janete Clair Coelho Peixoto",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.726324"
+    },
+    {
+      "nome": "Janete Maciel de Leão Chirana",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.751579"
+    },
+    {
+      "nome": "Jeonilto Pedro de Oliveira Saraiva",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.776916"
+    },
+    {
+      "nome": "José Alexandre Jara Vogado",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.804066"
+    },
+    {
+      "nome": "Leidiana Coelho da Rocha",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.829901"
+    },
+    {
+      "nome": "Lessandra Gonçalves Medina Freitas",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.855444"
+    },
+    {
+      "nome": "LINDINEZ Francisca Lima do Carmo",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.877019"
+    },
+    {
+      "nome": "LUÍS ALBERTO PESSOA DANTAS",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.899269"
+    },
+    {
+      "nome": "Maria Gorete da Silva",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.920796"
+    },
+    {
+      "nome": "Maria Leonilde Pereira da Silva Holanda",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.949333"
+    },
+    {
+      "nome": "Maria Sousa Rodrigues (Cidinha)",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:23.976720"
+    },
+    {
+      "nome": "Patricia Pereira de Brito Dias",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:24.003480"
+    },
+    {
+      "nome": "Roberta Haarengl Vieira",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:24.032301"
+    },
+    {
+      "nome": "VANIA BEZERRA SILVA COSTA",
+      "grupo": "Turma B - Grupo 05",
+      "situacao_parcial": "Sem atividades",
+      "data_extracao": "2025-12-24T16:31:24.058530"
+    },
+    {
+      "nome": "Anna Amélia Nascimento Ribeiro",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.094544"
+    },
+    {
+      "nome": "Carlos Augusto da Silva",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.121325"
+    },
+    {
+      "nome": "CICERA FERREIRA DE SOUSA SILVA",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "2.3\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.146554"
+    },
+    {
+      "nome": "DIEGO FRANCISCO DAMASCENO SANTANA",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "0.3\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.170939"
+    },
+    {
+      "nome": "DIVINA APARECIDA DE ANDRADE",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.198127"
+    },
+    {
+      "nome": "Edson Correia da silva",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "0.3\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.226599"
+    },
+    {
+      "nome": "Eliana Lopes Pereira",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.1\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.253552"
+    },
+    {
+      "nome": "Elion de Souza Pereira",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "0.4\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.280690"
+    },
+    {
+      "nome": "FELIX PAULO DE SOUSA",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "7.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.307298"
+    },
+    {
+      "nome": "FERNANDA PRISCILLA VIEIRA DA SILVA",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "8.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.331607"
+    },
+    {
+      "nome": "Gekson Pereira dos Santos",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "1.6\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.354344"
+    },
+    {
+      "nome": "Gislene Moreira Gonçalves",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.377506"
+    },
+    {
+      "nome": "Jocilene Fernandes dos Santos",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.402473"
+    },
+    {
+      "nome": "Marcela cristina lustosa de Oliveira",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "8.7\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.424543"
+    },
+    {
+      "nome": "MARIA DO Ó GOMES DOS SANTOS",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.4\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.448021"
+    },
+    {
+      "nome": "NORMA BERGER DE ARAUJO",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.472688"
+    },
+    {
+      "nome": "Silvana Lima da Cruz",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "1.6\nReprovado",
+      "data_extracao": "2025-12-24T16:31:42.500114"
+    },
+    {
+      "nome": "Simone Aparecida da Silva",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "8.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.534481"
+    },
+    {
+      "nome": "Talita Camargo Albiero Facella",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.561910"
+    },
+    {
+      "nome": "Valdenor Gomes de Oliveira",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.588356"
+    },
+    {
+      "nome": "Vanessa Braga da Silva Gomes",
+      "grupo": "Turma B - Grupo 06",
+      "situacao_parcial": "8.8\nAprovado",
+      "data_extracao": "2025-12-24T16:31:42.611931"
+    },
+    {
+      "nome": "Agna Myami Menezes Maciel",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.737532"
+    },
+    {
+      "nome": "Andreza dos Santos Pequi",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.763678"
+    },
+    {
+      "nome": "Anne Cristiane Lins da Silva",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:58.789152"
+    },
+    {
+      "nome": "Bianca Ferreira Duarte",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.815904"
+    },
+    {
+      "nome": "CLEDJA LUNA DOS SANTOS",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.2\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.839120"
+    },
+    {
+      "nome": "EDILEUZA VIEIRA DE OLIVEIRA",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.861520"
+    },
+    {
+      "nome": "Elzenir de Jesus Pereira Fernandes",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "8.7\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.886828"
+    },
+    {
+      "nome": "Eurimar Nogueira Garcia",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.912666"
+    },
+    {
+      "nome": "Felipe de Almeida Alvarenga",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.940360"
+    },
+    {
+      "nome": "Francisco Carlos Braga Almeida",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:31:58.969016"
+    },
+    {
+      "nome": "Itamar Robson da Silva",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "0.2\nReprovado",
+      "data_extracao": "2025-12-24T16:31:58.997011"
+    },
+    {
+      "nome": "Jacilene Pereira de Oliveira",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "1.1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:59.025791"
+    },
+    {
+      "nome": "Joislaine Mara de Sousa Reis",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.2\nAprovado",
+      "data_extracao": "2025-12-24T16:31:59.050290"
+    },
+    {
+      "nome": "José Cassiano Soares",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "1.1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:59.072280"
+    },
+    {
+      "nome": "Kelly Christina Alves De Barros Brasil",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.6\nAprovado",
+      "data_extracao": "2025-12-24T16:31:59.095651"
+    },
+    {
+      "nome": "Marcelo Chitolina",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:59.119452"
+    },
+    {
+      "nome": "MARIA DA CONCEIÇÃO ALVES DE ARAUJO",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:31:59.141764"
+    },
+    {
+      "nome": "Rikelly de Mello Buzatto",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.8\nAprovado",
+      "data_extracao": "2025-12-24T16:31:59.164257"
+    },
+    {
+      "nome": "Rodrigo Evangelista Silva",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:59.191815"
+    },
+    {
+      "nome": "Rosa Maria Pereira",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:31:59.220844"
+    },
+    {
+      "nome": "Tatiane Barros de Miranda Popets",
+      "grupo": "Turma B - Grupo 07",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:31:59.249362"
+    },
+    {
+      "nome": "ALDENISE GONÇALVES",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "10\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.313018"
+    },
+    {
+      "nome": "Aline Pacheco Ribeiro",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9.1\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.353915"
+    },
+    {
+      "nome": "ANA PAULA LIMA VERAS",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "2.6\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.391620"
+    },
+    {
+      "nome": "Ana Virginia Belém Leite Rodrigues",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "1.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.430021"
+    },
+    {
+      "nome": "ANDRÉIA LINAUS SIEBERT",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9.9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.473183"
+    },
+    {
+      "nome": "ARILANE MENDONÇA TELES DE MOURA",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "3.5\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.510262"
+    },
+    {
+      "nome": "Celio Jorge Marques Venancio",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9.2\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.577429"
+    },
+    {
+      "nome": "Crisley Andreia Pereira dos Santos Silva",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "10\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.613030"
+    },
+    {
+      "nome": "Edicleide Guimarães Gomes Cunha",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "8.5\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.638145"
+    },
+    {
+      "nome": "Ieda Silva de Melo",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9.4\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.668196"
+    },
+    {
+      "nome": "Jane Araújo Carvalho",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.696933"
+    },
+    {
+      "nome": "KATIA BERNADETH DA SILVA",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.725851"
+    },
+    {
+      "nome": "Laurineidija Ferreira Leite",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.754878"
+    },
+    {
+      "nome": "Leiliane Pinheiro de Sousa",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0.3\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.784020"
+    },
+    {
+      "nome": "Lidianny Barbosa Lino",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "1.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.812437"
+    },
+    {
+      "nome": "MAILDES DORIANA LIMA DA SILVA OLIVEIRA",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "8.9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.840939"
+    },
+    {
+      "nome": "Marilia Aparecida Frankilin de Sena",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0.5\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.871051"
+    },
+    {
+      "nome": "Maronides Nascimento Dantas",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:32:15.898920"
+    },
+    {
+      "nome": "OLGARINA DE MATOS FERREIRA PEREIRA",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.927559"
+    },
+    {
+      "nome": "Silvana Cristina Borges Regatieri",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.956370"
+    },
+    {
+      "nome": "Suzane Cristhina Mileo de Souza",
+      "grupo": "Turma B - Grupo 08",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:15.984532"
+    },
+    {
+      "nome": "ALESSANDRA ARANTES MUNIZ",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "8.3\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.660756"
+    },
+    {
+      "nome": "Cláudia de Fátima Barbosa Alves",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:30.687525"
+    },
+    {
+      "nome": "Edimar Maria Teixeira",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "8.6\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.713728"
+    },
+    {
+      "nome": "ELISANGELA VICENTE DA SILVA",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.738840"
+    },
+    {
+      "nome": "FABIOLA NATALI",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.764280"
+    },
+    {
+      "nome": "FRANCISCA RÍVIA DO NASCIMENTO SABINO",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.6\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.791637"
+    },
+    {
+      "nome": "JANAINA FERREIRA SOARES LIMA",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.7\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.816306"
+    },
+    {
+      "nome": "JOÃO MARCOS DE MELO OLIVEIRA",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "3.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:30.841924"
+    },
+    {
+      "nome": "Jucineide dos Santos Silva",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.866369"
+    },
+    {
+      "nome": "Maria Cecilia Cardoso Tecedor",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.890318"
+    },
+    {
+      "nome": "Maria do Amparo de Lima Costa",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "8.4\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.915039"
+    },
+    {
+      "nome": "Mauraci Rodrigues da Cunha",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "8.6\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.940385"
+    },
+    {
+      "nome": "MONICA CRISTINA NASCIMENTO DOS SANTOS",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "6.9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:30.966159"
+    },
+    {
+      "nome": "NATALIA IPOJUCA DA SILVA",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:30.990330"
+    },
+    {
+      "nome": "Rosana Maria Tavares de Mendonça",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "6.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:31.013434"
+    },
+    {
+      "nome": "Rosivania dos Santos Pinheiro",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:31.036731"
+    },
+    {
+      "nome": "Sanderlan Bezerra da Silva Souza",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:31.058920"
+    },
+    {
+      "nome": "Valdirene dos Santos Pereira",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "4.8\nReprovado",
+      "data_extracao": "2025-12-24T16:32:31.080672"
+    },
+    {
+      "nome": "Vanessa Cabral Pereira",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:31.105143"
+    },
+    {
+      "nome": "Vanessa Souza Arantes Rodrigues",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:31.133214"
+    },
+    {
+      "nome": "Zeliomar Prado da Silva Zelhyo Prado",
+      "grupo": "Turma B - Grupo 09",
+      "situacao_parcial": "7.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:31.163846"
+    },
+    {
+      "nome": "Alessandra Vieira Gonçalves",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "10\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.512509"
+    },
+    {
+      "nome": "Amanda Nonato de Carvalho",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.1\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.539879"
+    },
+    {
+      "nome": "ANTONIO FRANCISCO MOTA DA LUZ",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.567083"
+    },
+    {
+      "nome": "Carlos Adriano Abreu de Carvalho",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0.5\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.592259"
+    },
+    {
+      "nome": "FABIO MADRUGA RUBIM",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.617580"
+    },
+    {
+      "nome": "Isabel Cristina de Mattos Ramos",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.7\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.644069"
+    },
+    {
+      "nome": "LEDSON FERREIRA LIMA",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.667108"
+    },
+    {
+      "nome": "MÁRCIA LORENA RODRIGUES MENEZES",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.3\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.688832"
+    },
+    {
+      "nome": "Maria do Carmo Nunes de Morais Filha",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "2.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.710451"
+    },
+    {
+      "nome": "MARIA JEANE DA CONCEIÇÃO DA SILVA",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.5\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.731348"
+    },
+    {
+      "nome": "Maria José Soares Araújo",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "1.8\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.753495"
+    },
+    {
+      "nome": "Maria Lenilda Medeiros Ribeiro",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "8.8\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.775440"
+    },
+    {
+      "nome": "Maria Luciete Nunes Moreira",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "7.5\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.797239"
+    },
+    {
+      "nome": "Marieli Aparecida de Sousa do Nascimento",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.4\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.819986"
+    },
+    {
+      "nome": "Marta Batista de Souza Purificação",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.857120"
+    },
+    {
+      "nome": "Micheline Gabriella Nunes Nóbrega",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0.5\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.890262"
+    },
+    {
+      "nome": "Miqueias Santana Santos",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "9.2\nAprovado",
+      "data_extracao": "2025-12-24T16:32:47.921873"
+    },
+    {
+      "nome": "Monica Menezes da Silva",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0.1\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.953435"
+    },
+    {
+      "nome": "Sara Alves dos Santos Silva",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "1.7\nReprovado",
+      "data_extracao": "2025-12-24T16:32:47.983535"
+    },
+    {
+      "nome": "Solange Aparecida Pereira",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "1.5\nReprovado",
+      "data_extracao": "2025-12-24T16:32:48.014923"
+    },
+    {
+      "nome": "TEREZINHA LEITE DE SOUSA",
+      "grupo": "Turma B - Grupo 10",
+      "situacao_parcial": "0.9\nReprovado",
+      "data_extracao": "2025-12-24T16:32:48.048151"
+    }
+  ]
+}

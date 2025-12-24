@@ -146,6 +146,35 @@ def consolidate_grades():
             if df_original_len > df_filtered_len:
                 print(f"  - Filtered out {df_original_len - df_filtered_len} invalid rows")
             
+            # Filtrar CANCELADOS e DESISTENTES (Google Sheets permanecem intactos)
+            # Apenas remove do CSV local consolidado
+            cancelados_antes = len(df)
+            
+            # Filtrar pelo nome (coluna 1 ou 2)
+            name_cols = [df.columns[0], df.columns[1]] if len(df.columns) > 1 else [df.columns[0]]
+            
+            for col in name_cols:
+                if col in df.columns:
+                    df = df[~df[col].astype(str).str.upper().str.contains(
+                        'CANCELAD|DESISTENT|TRANSFERIDO', 
+                        na=False, 
+                        regex=True
+                    )]
+            
+            # Também verificar coluna de observação (geralmente coluna _3)
+            obs_cols = [c for c in df.columns if c in ['_3', 'Observação', 'OBSERVAÇÃO']]
+            for col in obs_cols:
+                if col in df.columns:
+                    df = df[~df[col].astype(str).str.upper().str.contains(
+                        'CANCELAD|DESISTENT|TRANSFERIDO|EVASÃO',
+                        na=False,
+                        regex=True
+                    )]
+            
+            cancelados_removidos = cancelados_antes - len(df)
+            if cancelados_removidos > 0:
+                print(f"  - Filtered out {cancelados_removidos} cancelled/dropout students")
+            
             # Add Source Metadata
             df['Source_Sheet_Title'] = title
             df['Source_URL'] = url
