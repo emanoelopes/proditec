@@ -263,14 +263,20 @@ def main():
 
     # Sidebar Navigation
     st.sidebar.title("Navegação")
-    modo = st.sidebar.radio("Selecione o Modo:", ["Visão Geral", "Comparador de Emails", "Análise de Notas Avamec"], key="nav_mode")
+    modo = st.sidebar.radio(
+        "Selecione o Modo:", 
+        ["Visão Geral", "Comparador de Emails", "Análise de Notas Avamec", "Comparação Planilhas vs Avamec"], 
+        key="nav_mode"
+    )
     
     if modo == "Visão Geral":
         render_overview()
     elif modo == "Comparador de Emails":
         render_email_comparator(comparador)
-    else:
+    elif modo == "Análise de Notas Avamec":
         render_grade_analysis()
+    else:  # Comparação Planilhas vs Avamec
+        render_comparison_dashboard()
 
 def render_overview():
     st.header("📊 Visão Geral - PRODITEC")
@@ -673,7 +679,239 @@ def render_grade_analysis():
     except Exception as e:
         st.error(f"Erro ao ler arquivo de dados: {e}")
 
-if __name__ == "__main__":
-    main()
-
-
+def render_comparison_dashboard():
+    """Renderiza dashboard de comparação entre Planilhas e Avamec"""
+    st.header("📊 Comparação: Planilhas vs Avamec")
+    
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    grades_file = os.path.join(base_dir, 'data', 'grades_consolidados.csv')
+    
+    # Tentar arquivo completo primeiro, depois o parcial
+    avamec_file = os.path.join(base_dir, 'data', 'avamec_completo.json')
+    if not os.path.exists(avamec_file):
+        avamec_file = os.path.join(base_dir, 'data', 'avamec_status_situacao.json')
+    
+    # Verificar arquivos
+    if not os.path.exists(grades_file):
+        st.error(f"❌ Arquivo não encontrado: {grades_file}")
+        st.info("Execute: python3 src/core/consolidate_grades.py")
+        return
+    
+    if not os.path.exists(avamec_file):
+        st.warning(f"⚠️ Dados do Avamec não encontrados: {avamec_file}")
+        st.info("Execute: python3 scripts/scrape_avamec_completo.py")
+        st.info("Mostrando apenas dados das planilhas...")
+        avamec_data = {}
+    else:
+        # Carregar dados do Avamec
+        with open(avamec_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            avamec_data = {a['nome'].strip().upper(): a for a in data.get('alunos', [])}
+    
+    # Carregar dados das planilhas
+    df_grades = pd.read_csv(grades_file, header=0)
+    
+    # Colunas
+    name_col = df_grades.columns[1]
+    status_col = 'Extra_Col_61'
+    
+    # Encontrar coluna de grupo
+    group_col = None
+    for col in df_grades.columns:
+        if df_grades[col].astype(str).str.contains('Turma [AB]', regex=True, na=False).any():
+            group_col = col
+            break
+    
+    if not group_col:
+        st.error("Coluna de grupo não encontrada!")
+        return
+    
+    # Extrair turma e grupo
+    df_grades['Turma_Grupo'] = df_grades[group_col].astype(str).str.extract(r'(Turma [AB] - Grupo \d+)', expand=False)
+    df_grades['Turma'] = df_grades['Turma_Grupo'].str.extract(r'(Turma [AB])', expand=False)
+    df_grades['Grupo'] = df_grades['Turma_Grupo'].str.extract(r'(Grupo \d+)', expand=False)
+    
+    # FILTROS NO SIDEBAR
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("🔍 Filtros")
+    
+    # Filtro de Turma
+    turmas_disponiveis = ['Todas'] + sorted([t for t in df_grades['Turma'].unique() if pd.notna(t)])
+    selected_turma = st.sidebar.selectbox("Selecione a Turma:", turmas_disponiveis, key="comp_turma")
+    
+    # Filtrar por turma
+    if selected_turma != 'Todas':
+        df_filtered = df_grades[df_grades['Turma'] == selected_turma].copy()
+    else:
+        df_filtered = df_grades.copy()
+    
+    # Filtro de Grupo
+    grupos_disponiveis = ['Todos'] + sorted([g for g in df_filtered['Grupo'].unique() if pd.notna(g)])
+    selected_grupo = st.sidebar.selectbox("Selecione o Grupo:", grupos_disponiveis, key="comp_grupo")
+    
+    # Filtrar por grupo
+    if selected_grupo != 'Todos':
+        df_filtered = df_filtered[df_filtered['Grupo'] == selected_grupo].copy()
+    
+    # Criar dados comparativos
+    comparison_data = []
+    for _, row in df_filtered.iterrows():
+        nome = str(row[name_col]).strip()
+        nome_upper = nome.upper()
+        status_planilha = str(row[status_col]).strip() if status_col in df_filtered.columns else 'N/A'
+        grupo = str(row['Turma_Grupo'])
+        
+        # Buscar no Avamec
+        avamec_info = avamec_data.get(nome_upper, {})
+        situacao_avamec = avamec_info.get('situacao_parcial', '—')
+        
+        # Determinar status da nota
+        if situacao_avamec == '—':
+            status_nota = '⏳ Aguardando'
+        else:
+            try:
+                nota = float(situacao_avamec)
+                status_nota = '✅ Lançada' if nota > 0 else '⚠️ Zero'
+            except:
+                status_nota = '❓ Verificar'
+        
+        comparison_data.append({
+            'Nome': nome,
+            'Grupo': grupo,
+            'Status_Planilha': status_planilha,
+            'Situacao_Avamec': situacao_avamec,
+            'Status_Nota': status_nota
+        })
+    
+    df_comp = pd.DataFrame(comparison_data)
+    
+    # MÉTRICAS
+    col1, col2, col3, col4 = st.columns(4)
+    
+    total = len(df_comp)
+    com_avamec = len([x for x in df_comp['Situacao_Avamec'] if x != '—'])
+    aguardando = len([x for x in df_comp['Status_Nota'] if 'Aguardando' in x])
+    
+    # Calcular divergências
+    divergencias = 0
+    for _, row in df_comp.iterrows():
+        if row['Situacao_Avamec'] != '—':
+            try:
+                nota = float(row['Situacao_Avamec'])
+                status_avamec = 'Aprovado' if nota >= 7 else 'Reprovado'
+                if row['Status_Planilha'].upper() != status_avamec.upper():
+                    divergencias += 1
+            except:
+                pass
+    
+    with col1:
+        st.metric("Total de Cursistas", total)
+    with col2:
+        st.metric("Com Dados Avamec", com_avamec)
+    with col3:
+        st.metric("🔴 Divergências", divergencias)
+    with col4:
+        st.metric("⏳ Aguardando", aguardando)
+    
+    st.markdown("---")
+    
+    # VISUALIZAÇÕES
+    if com_avamec > 0:
+        # Gráfico de Comparação de Status
+        st.subheader("📊 Comparação de Status")
+        
+        # Preparar dados para gráfico
+        status_counts = {
+            'Aprovado (Planilhas)': len(df_comp[df_comp['Status_Planilha'].str.upper() == 'APROVADO']),
+            'Reprovado (Planilhas)': len(df_comp[df_comp['Status_Planilha'].str.upper() == 'REPROVADO']),
+        }
+        
+        # Contar status Avamec
+        aprovado_avamec = 0
+        reprovado_avamec = 0
+        for _, row in df_comp.iterrows():
+            if row['Situacao_Avamec'] != '—':
+                try:
+                    nota = float(row['Situacao_Avamec'])
+                    if nota >= 7:
+                        aprovado_avamec += 1
+                    else:
+                        reprovado_avamec += 1
+                except:
+                    pass
+        
+        status_counts['Aprovado (Avamec)'] = aprovado_avamec
+        status_counts['Reprovado (Avamec)'] = reprovado_avamec
+        
+        import plotly.graph_objects as go
+        
+        fig = go.Figure(data=[
+            go.Bar(name='Planilhas', x=['Aprovado', 'Reprovado'], 
+                   y=[status_counts['Aprovado (Planilhas)'], status_counts['Reprovado (Planilhas)']],
+                   marker_color='lightblue'),
+            go.Bar(name='Avamec', x=['Aprovado', 'Reprovado'], 
+                   y=[status_counts['Aprovado (Avamec)'], status_counts['Reprovado (Avamec)']],
+                   marker_color='orange')
+        ])
+        
+        fig.update_layout(barmode='group', title='Status: Planilhas vs Avamec',
+                         xaxis_title='Status', yaxis_title='Quantidade')
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Distribuição de Notas Avamec
+        st.subheader("📈 Distribuição de Notas (Avamec)")
+        
+        notas_avamec = []
+        for _, row in df_comp.iterrows():
+            if row['Situacao_Avamec'] != '—':
+                try:
+                    notas_avamec.append(float(row['Situacao_Avamec']))
+                except:
+                    pass
+        
+        if notas_avamec:
+            fig_hist = go.Figure(data=[go.Histogram(x=notas_avamec, nbinsx=11, marker_color='green')])
+            fig_hist.update_layout(title='Distribuição de Notas do Avamec',
+                                  xaxis_title='Nota', yaxis_title='Quantidade')
+            st.plotly_chart(fig_hist, use_container_width=True)
+    
+    # DIVERGÊNCIAS
+    if divergencias > 0:
+        st.subheader(f"⚠️ Divergências Encontradas ({divergencias})")
+        
+        divergent_students = []
+        for _, row in df_comp.iterrows():
+            if row['Situacao_Avamec'] != '—':
+                try:
+                    nota = float(row['Situacao_Avamec'])
+                    status_avamec = 'Aprovado' if nota >= 7 else 'Reprovado'
+                    if row['Status_Planilha'].upper() != status_avamec.upper():
+                        divergent_students.append({
+                            'Nome': row['Nome'],
+                            'Grupo': row['Grupo'],
+                            'Planilhas': row['Status_Planilha'],
+                            'Avamec': f"{row['Situacao_Avamec']} ({status_avamec})"
+                        })
+                except:
+                    pass
+        
+        df_div = pd.DataFrame(divergent_students)
+        st.dataframe(df_div, use_container_width=True)
+    
+    # TABELA COMPLETA
+    st.subheader("📋 Tabela Detalhada")
+    
+    # Renomear colunas para exibição
+    df_display = df_comp.copy()
+    df_display.columns = ['Nome', 'Grupo', 'Status Final (Planilhas)', 'Situação Parcial (Avamec)', 'Status da Nota']
+    
+    st.dataframe(df_display, use_container_width=True, height=400)
+    
+    # Opção de download
+    csv = df_display.to_csv(index=False, encoding='utf-8-sig')
+    st.download_button(
+        label="📥 Baixar Comparação (CSV)",
+        data=csv,
+        file_name=f"comparacao_{selected_turma}_{selected_grupo}_{pd.Timestamp.now().strftime('%Y%m%d')}.csv",
+        mime="text/csv"
+    )
