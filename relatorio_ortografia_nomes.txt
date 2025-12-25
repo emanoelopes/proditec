@@ -1,0 +1,98 @@
+--- Relatório de Divergências Ortográficas (Turma B) ---
+Foco: Erros de digitação e diferenças de escrita.
+Ignorados: Cancelados, Transferidos, Desistentes.
+
+================================================================================
+PROVÁVEIS ERROS DE DIGITAÇÃO (Alta Similaridade)
+================================================================================
+PLANILHA: Ana Caroline de Barros Meira             | Grupo: Turma B - Grupo 04
+AVAMEC:   Ana Caroline Barros Meira                | Grupo: Turma B - Grupo 04
+Diferença: 5.7% | (Similaridade: 0.943)
+--------------------------------------------------------------------------------
+PLANILHA: JACILENE PEREIRA D EOLIVEIRA             | Grupo: Turma B - Grupo 07
+AVAMEC:   Jacilene Pereira de Oliveira             | Grupo: Turma B - Grupo 07
+Diferença: 3.6% | (Similaridade: 0.964)
+--------------------------------------------------------------------------------
+PLANILHA: JOANA DA LUZ DE ALMEIDA                  | Grupo: Turma B - Grupo 04
+AVAMEC:   Joana da Luz de Almeida Batista          | Grupo: Turma B - Grupo 04
+Diferença: 14.8% | (Similaridade: 0.852)
+--------------------------------------------------------------------------------
+PLANILHA: Jucineide dos santos Silva.              | Grupo: Turma B - Grupo 09
+AVAMEC:   Jucineide dos Santos Silva               | Grupo: Turma B - Grupo 09
+Diferença: 1.9% | (Similaridade: 0.981)
+--------------------------------------------------------------------------------
+PLANILHA: Lucivânia Norberto Moreira               | Grupo: Turma B - Grupo 03
+AVAMEC:   Lucivânia Noberto Moreira                | Grupo: Turma B - Grupo 03
+Diferença: 2.0% | (Similaridade: 0.980)
+--------------------------------------------------------------------------------
+PLANILHA: MARIA DO CARMO NUNES DE MORAIS           | Grupo: Turma B - Grupo 10
+AVAMEC:   Maria do Carmo Nunes de Morais Filha     | Grupo: Turma B - Grupo 10
+Diferença: 9.1% | (Similaridade: 0.909)
+--------------------------------------------------------------------------------
+PLANILHA: MARIA FRANCINETE FERREIRA FRASÃO         | Grupo: Turma B - Grupo 03
+AVAMEC:   Maria Francinete Ferreira Frazao         | Grupo: Turma B - Grupo 03
+Diferença: 3.1% | (Similaridade: 0.969)
+--------------------------------------------------------------------------------
+PLANILHA: Maria Sousa Rodrigues                    | Grupo: Turma B - Grupo 05
+AVAMEC:   Maria Sousa Rodrigues (Cidinha)          | Grupo: Turma B - Grupo 05
+Diferença: 19.2% | (Similaridade: 0.808)
+--------------------------------------------------------------------------------
+PLANILHA: Mariele Aparecida de Sousa do Nascimento | Grupo: Turma B - Grupo 10
+AVAMEC:   Marieli Aparecida de Sousa do Nascimento | Grupo: Turma B - Grupo 10
+Diferença: 2.5% | (Similaridade: 0.975)
+--------------------------------------------------------------------------------
+PLANILHA: Mônica Meneses da Silva                  | Grupo: Turma B - Grupo 10
+AVAMEC:   Monica Menezes da Silva                  | Grupo: Turma B - Grupo 10
+Diferença: 4.3% | (Similaridade: 0.957)
+--------------------------------------------------------------------------------
+PLANILHA: nely apareida de oliveira riquelmes      | Grupo: Turma B - Grupo 01
+AVAMEC:   Nely Aparecida de Oliveira Riquelme      | Grupo: Turma B - Grupo 02
+Diferença: 2.9% | (Similaridade: 0.971)
+--------------------------------------------------------------------------------
+PLANILHA: Olga Oliveira                            | Grupo: Turma B - Grupo 04
+AVAMEC:   OLGA OLIVEIRA VASCONCELOS                | Grupo: Turma B - Grupo 04
+Diferença: 31.6% | (Similaridade: 0.684)
+--------------------------------------------------------------------------------
+PLANILHA: Veronica Nunes Vieira Pezente            | Grupo: Turma B - Grupo 04
+AVAMEC:   Veronica Nunes Vieira                    | Grupo: Turma B - Grupo 04
+Diferença: 16.0% | (Similaridade: 0.840)
+--------------------------------------------------------------------------------
+PLANILHA: Zeliomar prado da Silva                  | Grupo: Turma B - Grupo 09
+AVAMEC:   Zeliomar Prado da Silva Zelhyo Prado     | Grupo: Turma B - Grupo 09
+Diferença: 22.0% | (Similaridade: 0.780)
+--------------------------------------------------------------------------------
+
+
+================================================================================
+SEM CORRESPONDÊNCIA ENCONTRADA (Verificar manualmente)
+================================================================================
+
+>>> Na Planilha (Ativos) sem par no Avamec:
+ - Adailton Souza Santos (Turma B - Grupo 02)
+ - Adriana Tomé da Silva (Turma B - Grupo 02)
+ - Angela Cristina Schmidt (Turma B - Grupo 02)
+ - Anna Kassia de Souza Rodrigues (Turma B - Grupo 02)
+ - Antônia Cyntia Gonçalves Farias (Turma B - Grupo 02)
+ - ARILANE TELES DE MOURA MONTE FREITAS (Turma B - Grupo 08)
+ - Carmen Correia dos Santos (Turma B - Grupo 02)
+ - CASSIA NEVES RODRIGUES COSTA (Turma B - Grupo 02)
+ - CRISTIANA ALVES DE FIGUEIREDO (Turma B - Grupo 02)
+ - Edineide Pereira da Silva (Turma B - Grupo 02)
+ - Eliane Soares dos Santos (Turma B - Grupo 02)
+ - Emerson de Campos Maciel (Turma B - Grupo 02)
+ - Eunice Alves de Almeida de Deus (Turma B - Grupo 09)
+ - Kátia Andréia Pinto Corrêa (Turma B - Grupo 02)
+ - Laurineide Ferreira da Silva (Turma B - Grupo 02)
+ - Maria José Guedes (Turma B - Grupo 02)
+ - Marina Candida Reis Freitas Santos (Turma B - Grupo 02)
+ - MERCIA ROSEANE DA SILVA PINTO (Turma B - Grupo 02)
+ - Nilde Lucia Griep Preuss (Turma B - Grupo 02)
+ - Paula Queiroz Carvalho (Turma B - Grupo 02)
+ - Petrucio Dantas de Maria (Turma B - Grupo 02)
+ - Rosângela Cândida Pinto (Turma B - Grupo 02)
+ - SHAYANE LOUZEIRO OLIVEIRA (Turma B - Grupo 02)
+ - Thiciane Oliveira Salgado Borges (Turma B - Grupo 02)
+
+>>> No Avamec sem par na Planilha:
+ - ARILANE MENDONÇA TELES DE MOURA (Turma B - Grupo 08)
+ - Itamar Robson da Silva (Turma B - Grupo 07)

@@ -1,0 +1,114 @@
+--- Relatório de Divergência de Nomes (Turma B) ---
+Data: 25/12/2025
+
+Resumo:
+- Planilha: 251 cursistas encontrados na Turma B.
+- Avamec: 192 cursistas encontrados na Turma B.
+- Nota: Turma A não foi verificada por falta de dados do Avamec.
+
+============================================================
+### Cursistas na Planilha mas NÃO no Avamec (75)
+(Verifique se foram cancelados, transferidos ou se há erro de digitação)
+
+#### Normal / Ativos (prováveis divergências reais ou desistentes não marcados no Avamec):
+ - ARILANE TELES DE MOURA MONTE FREITAS
+ - Adailton Souza Santos
+ - Adriana Tomé da Silva
+ - Ana Caroline de Barros Meira
+ - Angela Cristina Schmidt
+ - Anna Kassia de Souza Rodrigues
+ - Antônia Cyntia Gonçalves Farias
+ - CASSIA NEVES RODRIGUES COSTA
+ - CRISTIANA ALVES DE FIGUEIREDO
+ - Carmen Correia dos Santos
+ - Edineide Pereira da Silva
+ - Eliane Soares dos Santos
+ - Emerson de Campos Maciel
+ - Eunice Alves de Almeida de Deus
+ - JACILENE PEREIRA D EOLIVEIRA
+ - JOANA DA LUZ DE ALMEIDA
+ - Jucineide dos santos Silva.
+ - Kátia Andréia Pinto Corrêa
+ - Laurineide Ferreira da Silva
+ - Lucivânia Norberto Moreira
+ - MARIA DO CARMO NUNES DE MORAIS
+ - MARIA FRANCINETE FERREIRA FRASÃO
+ - MERCIA ROSEANE DA SILVA PINTO
+ - Maria José Guedes
+ - Maria Sousa Rodrigues
+ - Mariele Aparecida de Sousa do Nascimento
+ - Marina Candida Reis Freitas Santos
+ - Mônica Meneses da Silva
+ - Nilde Lucia Griep Preuss
+ - Olga Oliveira
+ - Paula Queiroz Carvalho
+ - Petrucio Dantas de Maria
+ - Rosângela Cândida Pinto
+ - SHAYANE LOUZEIRO OLIVEIRA
+ - Thiciane Oliveira Salgado Borges
+ - Veronica Nunes Vieira Pezente
+ - Zeliomar prado da Silva
+ - nely apareida de oliveira riquelmes
+
+#### Marcados como CANCELADA / TRANSFERIDO na Planilha:
+ - CANCELADA - ANDREEV DE JESUS GONÇALVES CARDOSO
+ - CANCELADA - ANTONIA ALVES MEDEIROS
+ - CANCELADA - Abner Alcantara dos Santos
+ - CANCELADA - Alequissandro Menezes Barreto
+ - CANCELADA - Alzira dos Santos
+ - CANCELADA - Carlos Adriano Abreu de Carvalho
+ - CANCELADA - EDILZA GOMES FERREIRA
+ - CANCELADA - FABIA TERESA DA GRAÇA DOS SANTOS
+ - CANCELADA - Francisca Chagas Sousa MagalhÃ£es
+ - CANCELADA - Girlem Pereira de Matos
+ - CANCELADA - Isabelle Karoline Chaves de Oliveira
+ - CANCELADA - JEANNE PATRÍCIA RIBEIRO LIMA
+ - CANCELADA - José Carlos de Oliveira Cruz
+ - CANCELADA - MAIANY PERRONE MATOS
+ - CANCELADA - MARIA ANTONIA SOUSA DA SILVA FERNANDES
+ - CANCELADA - MARIA CRISTINA CORREIA DE AZEVEDO RIBEIRO
+ - CANCELADA - MARIA DO SOCORRO SOARES RODRIGUES
+ - CANCELADA - MARIA LUCIA MACIEL ALMEIDA
+ - CANCELADA - Mag Rose Soares Costa
+ - CANCELADA - Marcos Antonio da Costa Santos
+ - CANCELADA - Maria Daniela de Souza
+ - CANCELADA - Maria de Fátima da Silva Tavares
+ - CANCELADA - Maria do Socorro da Costa Santos
+ - CANCELADA - PATRICIA BORGES RODRIGUES
+ - CANCELADA - VALDENOURA DIAS TRINDADE
+ - CANCELADA - VALDISNEIA LOPES SANTOS
+ - CANCELADA - VANIBEL PINHEIRO DE SOUZA
+ - CANCELADA - Valdirene dos Santos Pereira
+ - CANCELADA - Vivian Vieira Salles de Oliveira
+ - CANCELADA- Antonio Amaral
+ - CANCELADA- Cerys Cristina De Sousa
+ - TRANSFERIDA - CICERA DE OLIVEIRA ALVES
+ - TRANSFERIDO - Claudio Jose Alves 
+ - TRANSFERIDO - Ivanise Bernardes Silva
+ - TRANSFERIDO - JOSÉ ALEXANDRE DA SILVA
+ - TRANSFERIDO - Ligia Guimaraes Santos Patricio
+ - TRANSFERIDO - Tania Regina Rodrigues Franco
+
+============================================================
+### Cursistas no Avamec mas NÃO na Planilha (16)
+(Possíveis erros de digitação na planilha ou alunos inscritos apenas no Avamec)
+
+ - ARILANE MENDONÇA TELES DE MOURA (Provável: ARILANE TELES DE MOURA MONTE FREITAS)
+ - Ana Caroline Barros Meira (Provável: Ana Caroline de Barros Meira)
+ - Itamar Robson da Silva
+ - Jacilene Pereira de Oliveira (Provável: JACILENE PEREIRA D EOLIVEIRA)
+ - Joana da Luz de Almeida Batista (Provável: JOANA DA LUZ DE ALMEIDA)
+ - Jucineide dos Santos Silva (Provável: Jucineide dos santos Silva.)
+ - Lucivânia Noberto Moreira (Provável: Lucivânia Norberto Moreira)
+ - Maria Francinete Ferreira Frazao (Provável: MARIA FRANCINETE FERREIRA FRASÃO)
+ - Maria Sousa Rodrigues (Cidinha) (Provável: Maria Sousa Rodrigues)
+ - Maria do Carmo Nunes de Morais Filha (Provável: MARIA DO CARMO NUNES DE MORAIS)
+ - Marieli Aparecida de Sousa do Nascimento (Provável: Mariele Aparecida de Sousa do Nascimento)
+ - Monica Menezes da Silva (Provável: Mônica Meneses da Silva)
+ - Nely Aparecida de Oliveira Riquelme (Provável: nely apareida de oliveira riquelmes)
+ - OLGA OLIVEIRA VASCONCELOS (Provável: Olga Oliveira)
+ - Veronica Nunes Vieira (Provável: Veronica Nunes Vieira Pezente)
+ - Zeliomar Prado da Silva Zelhyo Prado (Provável: Zeliomar prado da Silva)
+
+============================================================
+Nota Lógica: A comparação normalizou os nomes removendo acentos e espaços extras antes de comparar.
